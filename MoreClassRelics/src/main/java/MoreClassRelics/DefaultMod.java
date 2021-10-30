@@ -2,7 +2,6 @@ package MoreClassRelics;
 
 import MoreClassRelics.relics.*;
 import basemod.*;
-import basemod.eventUtil.AddEventParams;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
@@ -14,21 +13,13 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.dungeons.TheCity;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.*;
-import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import MoreClassRelics.cards.*;
-import MoreClassRelics.characters.TheDefault;
-import MoreClassRelics.events.IdentityCrisisEvent;
-import MoreClassRelics.potions.PlaceholderPotion;
 import MoreClassRelics.util.IDCheckDontTouchPls;
 import MoreClassRelics.util.TextureLoader;
-import MoreClassRelics.variables.DefaultCustomVariable;
-import MoreClassRelics.variables.DefaultSecondMagicNumber;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -66,11 +57,9 @@ import java.util.Properties;
 
 @SpireInitializer
 public class DefaultMod implements
-        EditCardsSubscriber,
         EditRelicsSubscriber,
         EditStringsSubscriber,
         EditKeywordsSubscriber,
-        EditCharactersSubscriber,
         PostInitializeSubscriber {
     // Make sure to implement the subscribers *you* are using (read basemod wiki). Editing cards? EditCardsSubscriber.
     // Making relics? EditRelicsSubscriber. etc., etc., for a full list and how to make your own, visit the basemod wiki.
@@ -92,52 +81,19 @@ public class DefaultMod implements
     // Colors (RGB)
     // Character Color
     public static final Color DEFAULT_GRAY = CardHelper.getColor(64.0f, 70.0f, 70.0f);
-    
-    // Potion Colors in RGB
-    public static final Color PLACEHOLDER_POTION_LIQUID = CardHelper.getColor(209.0f, 53.0f, 18.0f); // Orange-ish Red
-    public static final Color PLACEHOLDER_POTION_HYBRID = CardHelper.getColor(255.0f, 230.0f, 230.0f); // Near White
-    public static final Color PLACEHOLDER_POTION_SPOTS = CardHelper.getColor(100.0f, 25.0f, 10.0f); // Super Dark Red/Brown
-    
+
     // ONCE YOU CHANGE YOUR MOD ID (BELOW, YOU CAN'T MISS IT) CHANGE THESE PATHS!!!!!!!!!!!
     // ONCE YOU CHANGE YOUR MOD ID (BELOW, YOU CAN'T MISS IT) CHANGE THESE PATHS!!!!!!!!!!!
     // ONCE YOU CHANGE YOUR MOD ID (BELOW, YOU CAN'T MISS IT) CHANGE THESE PATHS!!!!!!!!!!!
     // ONCE YOU CHANGE YOUR MOD ID (BELOW, YOU CAN'T MISS IT) CHANGE THESE PATHS!!!!!!!!!!!
     // ONCE YOU CHANGE YOUR MOD ID (BELOW, YOU CAN'T MISS IT) CHANGE THESE PATHS!!!!!!!!!!!
     // ONCE YOU CHANGE YOUR MOD ID (BELOW, YOU CAN'T MISS IT) CHANGE THESE PATHS!!!!!!!!!!!
-  
-    // Card backgrounds - The actual rectangular card.
-    private static final String ATTACK_DEFAULT_GRAY = "MoreClassRelicsResources/images/512/bg_attack_default_gray.png";
-    private static final String SKILL_DEFAULT_GRAY = "MoreClassRelicsResources/images/512/bg_skill_default_gray.png";
-    private static final String POWER_DEFAULT_GRAY = "MoreClassRelicsResources/images/512/bg_power_default_gray.png";
-    
-    private static final String ENERGY_ORB_DEFAULT_GRAY = "MoreClassRelicsResources/images/512/card_default_gray_orb.png";
-    private static final String CARD_ENERGY_ORB = "MoreClassRelicsResources/images/512/card_small_orb.png";
-    
-    private static final String ATTACK_DEFAULT_GRAY_PORTRAIT = "MoreClassRelicsResources/images/1024/bg_attack_default_gray.png";
-    private static final String SKILL_DEFAULT_GRAY_PORTRAIT = "MoreClassRelicsResources/images/1024/bg_skill_default_gray.png";
-    private static final String POWER_DEFAULT_GRAY_PORTRAIT = "MoreClassRelicsResources/images/1024/bg_power_default_gray.png";
-    private static final String ENERGY_ORB_DEFAULT_GRAY_PORTRAIT = "MoreClassRelicsResources/images/1024/card_default_gray_orb.png";
-    
-    // Character assets
-    private static final String THE_DEFAULT_BUTTON = "MoreClassRelicsResources/images/charSelect/DefaultCharacterButton.png";
-    private static final String THE_DEFAULT_PORTRAIT = "MoreClassRelicsResources/images/charSelect/DefaultCharacterPortraitBG.png";
-    public static final String THE_DEFAULT_SHOULDER_1 = "MoreClassRelicsResources/images/char/defaultCharacter/shoulder.png";
-    public static final String THE_DEFAULT_SHOULDER_2 = "MoreClassRelicsResources/images/char/defaultCharacter/shoulder2.png";
-    public static final String THE_DEFAULT_CORPSE = "MoreClassRelicsResources/images/char/defaultCharacter/corpse.png";
     
     //Mod Badge - A small icon that appears in the mod settings menu next to your mod.
     public static final String BADGE_IMAGE = "MoreClassRelicsResources/images/Badge.png";
     
-    // Atlas and JSON files for the Animations
-    public static final String THE_DEFAULT_SKELETON_ATLAS = "MoreClassRelicsResources/images/char/defaultCharacter/skeleton.atlas";
-    public static final String THE_DEFAULT_SKELETON_JSON = "MoreClassRelicsResources/images/char/defaultCharacter/skeleton.json";
-    
     // =============== MAKE IMAGE PATHS =================
-    
-    public static String makeCardPath(String resourcePath) {
-        return getModID() + "Resources/images/cards/" + resourcePath;
-    }
-    
+
     public static String makeRelicPath(String resourcePath) {
         return getModID() + "Resources/images/relics/" + resourcePath;
     }
@@ -145,19 +101,7 @@ public class DefaultMod implements
     public static String makeRelicOutlinePath(String resourcePath) {
         return getModID() + "Resources/images/relics/outline/" + resourcePath;
     }
-    
-    public static String makeOrbPath(String resourcePath) {
-        return getModID() + "Resources/images/orbs/" + resourcePath;
-    }
-    
-    public static String makePowerPath(String resourcePath) {
-        return getModID() + "Resources/images/powers/" + resourcePath;
-    }
-    
-    public static String makeEventPath(String resourcePath) {
-        return getModID() + "Resources/images/events/" + resourcePath;
-    }
-    
+
     // =============== /MAKE IMAGE PATHS/ =================
     
     // =============== /INPUT TEXTURE LOCATION/ =================
@@ -198,17 +142,6 @@ public class DefaultMod implements
         // Change their locations to reflect your actual ID rather than theDefault. They get loaded before getID is a thing.
         
         logger.info("Done subscribing");
-        
-        logger.info("Creating the color " + TheDefault.Enums.COLOR_GRAY.toString());
-        
-        BaseMod.addColor(TheDefault.Enums.COLOR_GRAY, DEFAULT_GRAY, DEFAULT_GRAY, DEFAULT_GRAY,
-                DEFAULT_GRAY, DEFAULT_GRAY, DEFAULT_GRAY, DEFAULT_GRAY,
-                ATTACK_DEFAULT_GRAY, SKILL_DEFAULT_GRAY, POWER_DEFAULT_GRAY, ENERGY_ORB_DEFAULT_GRAY,
-                ATTACK_DEFAULT_GRAY_PORTRAIT, SKILL_DEFAULT_GRAY_PORTRAIT, POWER_DEFAULT_GRAY_PORTRAIT,
-                ENERGY_ORB_DEFAULT_GRAY_PORTRAIT, CARD_ENERGY_ORB);
-        
-        logger.info("Done creating the color");
-        
         
         logger.info("Adding mod settings");
         // This loads the mod settings.
@@ -277,23 +210,7 @@ public class DefaultMod implements
     }
     
     // ============== /SUBSCRIBE, CREATE THE COLOR_GRAY, INITIALIZE/ =================
-    
-    
-    // =============== LOAD THE CHARACTER =================
-    
-    @Override
-    public void receiveEditCharacters() {
-        logger.info("Beginning to edit characters. " + "Add " + TheDefault.Enums.THE_DEFAULT.toString());
-        
-        BaseMod.addCharacter(new TheDefault("the Default", TheDefault.Enums.THE_DEFAULT),
-                THE_DEFAULT_BUTTON, THE_DEFAULT_PORTRAIT, TheDefault.Enums.THE_DEFAULT);
-        
-        receiveEditPotions();
-        logger.info("Added " + TheDefault.Enums.THE_DEFAULT.toString());
-    }
-    
-    // =============== /LOAD THE CHARACTER/ =================
-    
+
     
     // =============== POST-INITIALIZE =================
     
@@ -343,37 +260,12 @@ public class DefaultMod implements
         // deffo take a look at that basemod wiki link as well, as it explains things very in-depth
         // btw if you don't provide event type, normal is assumed by default
 
-        // Create a new event builder
-        // Since this is a builder these method calls (outside of create()) can be skipped/added as necessary
-        AddEventParams eventParams = new AddEventParams.Builder(IdentityCrisisEvent.ID, IdentityCrisisEvent.class) // for this specific event
-            .dungeonID(TheCity.ID) // The dungeon (act) this event will appear in
-            .playerClass(TheDefault.Enums.THE_DEFAULT) // Character specific event
-            .create();
-
-        // Add the event
-        BaseMod.addEvent(eventParams);
-
         // =============== /EVENTS/ =================
         logger.info("Done loading badge Image and mod options");
     }
     
     // =============== / POST-INITIALIZE/ =================
-    
-    // ================ ADD POTIONS ===================
-    
-    public void receiveEditPotions() {
-        logger.info("Beginning to edit potions");
-        
-        // Class Specific Potion. If you want your potion to not be class-specific,
-        // just remove the player class at the end (in this case the "TheDefaultEnum.THE_DEFAULT".
-        // Remember, you can press ctrl+P inside parentheses like addPotions)
-        BaseMod.addPotion(PlaceholderPotion.class, PLACEHOLDER_POTION_LIQUID, PLACEHOLDER_POTION_HYBRID, PLACEHOLDER_POTION_SPOTS, PlaceholderPotion.POTION_ID, TheDefault.Enums.THE_DEFAULT);
-        
-        logger.info("Done editing potions");
-    }
-    
-    // ================ /ADD POTIONS/ ===================
-    
+
     
     // ================ ADD RELICS ===================
     
@@ -388,102 +280,29 @@ public class DefaultMod implements
         // Of note is that the bard mod uses it's own custom relic class (not dissimilar to our AbstractDefaultCard class for cards) that adds the 'color' field,
         // in order to automatically differentiate which pool to add the relic too.
 
-        // This adds a character specific relic. Only when you play with the mentioned color, will you get this relic.
-        BaseMod.addRelicToCustomPool(new PlaceholderRelic(), TheDefault.Enums.COLOR_GRAY);
-        BaseMod.addRelicToCustomPool(new BottledPlaceholderRelic(), TheDefault.Enums.COLOR_GRAY);
-        BaseMod.addRelicToCustomPool(new DefaultClickableRelic(), TheDefault.Enums.COLOR_GRAY);
-        
         // This adds a relic to the Shared pool. Every character can find this relic.
-        BaseMod.addRelic(new PlaceholderRelic2(), RelicType.SHARED);
+
         BaseMod.addRelic(new GhostPepper(), RelicType.RED);
         // Mark relics as seen - makes it visible in the compendium immediately
         // If you don't have this it won't be visible in the compendium until you see them in game
         // (the others are all starters so they're marked as seen in the character file)
-        UnlockTracker.markRelicAsSeen(BottledPlaceholderRelic.ID);
+        // UnlockTracker.markRelicAsSeen(BottledPlaceholderRelic.ID);
         logger.info("Done adding relics!");
     }
     
     // ================ /ADD RELICS/ ===================
-    
-    
-    // ================ ADD CARDS ===================
-    
-    @Override
-    public void receiveEditCards() {
-        logger.info("Adding variables");
-        //Ignore this
-        pathCheck();
-        // Add the Custom Dynamic Variables
-        logger.info("Add variables");
-        // Add the Custom Dynamic variables
-        BaseMod.addDynamicVariable(new DefaultCustomVariable());
-        BaseMod.addDynamicVariable(new DefaultSecondMagicNumber());
-        
-        logger.info("Adding cards");
-        // Add the cards
-        // Don't delete these default cards yet. You need 1 of each type and rarity (technically) for your game not to crash
-        // when generating card rewards/shop screen items.
 
-        // This method automatically adds any cards so you don't have to manually load them 1 by 1
-        // For more specific info, including how to exclude cards from being added:
-        // https://github.com/daviscook477/BaseMod/wiki/AutoAdd
-
-        // The ID for this function isn't actually your modid as used for prefixes/by the getModID() method.
-        // It's the mod id you give MTS in ModTheSpire.json - by default your artifact ID in your pom.xml
-
-        //TODO: Rename the "DefaultMod" with the modid in your ModTheSpire.json file
-        //TODO: The artifact mentioned in ModTheSpire.json is the artifactId in pom.xml you should've edited earlier
-        new AutoAdd("DefaultMod") // ${project.artifactId}
-            .packageFilter(AbstractDefaultCard.class) // filters to any class in the same package as AbstractDefaultCard, nested packages included
-            .setDefaultSeen(true)
-            .cards();
-
-        // .setDefaultSeen(true) unlocks the cards
-        // This is so that they are all "seen" in the library,
-        // for people who like to look at the card list before playing your mod
-
-        logger.info("Done adding cards!");
-    }
-    
-    // ================ /ADD CARDS/ ===================
-    
-    
     // ================ LOAD THE TEXT ===================
     
     @Override
     public void receiveEditStrings() {
-        logger.info("You seeing this?");
         logger.info("Beginning to edit strings for mod with ID: " + getModID());
-        
-        // CardStrings
-        BaseMod.loadCustomStringsFile(CardStrings.class,
-                getModID() + "Resources/localization/eng/DefaultMod-Card-Strings.json");
-        
-        // PowerStrings
-        BaseMod.loadCustomStringsFile(PowerStrings.class,
-                getModID() + "Resources/localization/eng/DefaultMod-Power-Strings.json");
-        
+
         // RelicStrings
         BaseMod.loadCustomStringsFile(RelicStrings.class,
                 getModID() + "Resources/localization/eng/DefaultMod-Relic-Strings.json");
         
-        // Event Strings
-        BaseMod.loadCustomStringsFile(EventStrings.class,
-                getModID() + "Resources/localization/eng/DefaultMod-Event-Strings.json");
-        
-        // PotionStrings
-        BaseMod.loadCustomStringsFile(PotionStrings.class,
-                getModID() + "Resources/localization/eng/DefaultMod-Potion-Strings.json");
-        
-        // CharacterStrings
-        BaseMod.loadCustomStringsFile(CharacterStrings.class,
-                getModID() + "Resources/localization/eng/DefaultMod-Character-Strings.json");
-        
-        // OrbStrings
-        BaseMod.loadCustomStringsFile(OrbStrings.class,
-                getModID() + "Resources/localization/eng/DefaultMod-Orb-Strings.json");
-        
-        logger.info("Done edittting strings");
+        logger.info("Done editting strings");
     }
     
     // ================ /LOAD THE TEXT/ ===================
