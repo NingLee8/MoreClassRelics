@@ -284,6 +284,7 @@ public class DefaultMod implements
 
         BaseMod.addRelic(new GhostPepper(), RelicType.RED);
         BaseMod.addRelic(new AntiAntidote(), RelicType.GREEN);
+        BaseMod.addRelic(new BlackMirror(), RelicType.BLUE);
         // Mark relics as seen - makes it visible in the compendium immediately
         // If you don't have this it won't be visible in the compendium until you see them in game
         // (the others are all starters so they're marked as seen in the character file)

@@ -12,5 +12,12 @@
     "DESCRIPTIONS": [
       "Poison stacks no longer decrease."
     ]
+  },
+  "MoreClassRelics:BlackMirror": {
+    "NAME": "Black Mirror",
+    "FLAVOR": "It's just your reflection.",
+    "DESCRIPTIONS": [
+      "Whenever you evoke a Dark orb, trigger the passive ability of all other Dark orbs."
+    ]
   }
 }
