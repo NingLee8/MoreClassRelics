@@ -19,5 +19,19 @@
     "DESCRIPTIONS": [
       "Whenever you evoke a Dark orb, trigger the passive ability of all other Dark orbs."
     ]
+  },
+  "MoreClassRelics:WolfsFang": {
+    "NAME": "Wolf's Fang",
+    "FLAVOR": "It's sharp to the touch... and so are you.",
+    "DESCRIPTIONS": [
+      "If you start your turn in Wrath stance, draw an additional card."
+    ]
+  },
+  "MoreClassRelics:FadedBookmark": {
+    "NAME": "Faded Bookmark",
+    "FLAVOR": "It's okay if you don't remember where you left off.",
+    "DESCRIPTIONS": [
+      "At the end of your turn, deal damage to all enemies equal to the number of cards you Retain."
+    ]
   }
 }
