@@ -5,5 +5,12 @@
     "DESCRIPTIONS": [
       "Take 16 Damage. Increase your Max HP by 16."
     ]
+  },
+  "MoreClassRelics:AntiAntidote": {
+    "NAME": "Anti-antidote",
+    "FLAVOR": "Not FDA approved.",
+    "DESCRIPTIONS": [
+      "Poison stacks no longer decrease."
+    ]
   }
 }
