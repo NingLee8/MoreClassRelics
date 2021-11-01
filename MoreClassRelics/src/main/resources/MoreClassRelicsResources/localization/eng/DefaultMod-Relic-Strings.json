@@ -6,6 +6,20 @@
       "Take 16 Damage. Increase your Max HP by 16."
     ]
   },
+  "MoreClassRelics:JackInTheBox": {
+    "NAME": "Jack-in-the-box",
+    "FLAVOR": "Spicy!",
+    "DESCRIPTIONS": [
+      "The first time you take damage each round, deal that much to all enemies."
+    ]
+  },
+  "MoreClassRelics:FoldingChair": {
+    "NAME": "Folding Chair",
+    "FLAVOR": "IRONCLAD WITH THE FOLDING CHAIR!",
+    "DESCRIPTIONS": [
+      "Whenever you deal unblocked damage to a non-minion enemy equal to or greater than 50% of their max HP, heal 4 HP."
+    ]
+  },
   "MoreClassRelics:AntiAntidote": {
     "NAME": "Anti-antidote",
     "FLAVOR": "Not FDA approved.",

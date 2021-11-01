@@ -1,0 +1,47 @@
+package MoreClassRelics.relics;
+
+import MoreClassRelics.DefaultMod;
+import MoreClassRelics.util.TextureLoader;
+import basemod.abstracts.CustomRelic;
+import com.badlogic.gdx.graphics.Texture;
+import com.megacrit.cardcrawl.actions.common.*;
+import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
+
+import static MoreClassRelics.DefaultMod.makeRelicOutlinePath;
+import static MoreClassRelics.DefaultMod.makeRelicPath;
+
+public class FoldingChair extends CustomRelic {
+    public static final String ID = DefaultMod.makeID("FoldingChair");
+    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("ghost_pepper.png"));
+    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("ghost_pepper.png"));
+
+    public FoldingChair() {
+        super(ID, IMG, OUTLINE, RelicTier.UNCOMMON, LandingSound.SOLID);
+    }
+
+    public void onAttack(DamageInfo info, int damageAmount, AbstractCreature target) {
+
+        boolean isNotMinion = !target.hasPower("Minion");
+        boolean damageThresholdMet = (float)damageAmount >= (float)target.maxHealth / 2.0F;
+        boolean isNormalDamage = DamageInfo.DamageType.NORMAL.equals(info.type);
+        if (info.owner != null && isNormalDamage && isNotMinion && damageThresholdMet) {
+            this.addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));
+            this.addToTop(new HealAction(AbstractDungeon.player, AbstractDungeon.player, 4, 0.0F));
+        }
+    }
+
+    @Override
+    public String getUpdatedDescription() {
+        return this.DESCRIPTIONS[0];
+    }
+
+    @Override
+    public AbstractRelic makeCopy() {
+        return new FoldingChair();
+    }
+
+
+}

@@ -283,6 +283,8 @@ public class DefaultMod implements
         // This adds a relic to the Shared pool. Every character can find this relic.
 
         BaseMod.addRelic(new GhostPepper(), RelicType.RED);
+        BaseMod.addRelic(new JackInTheBox(), RelicType.RED);
+        BaseMod.addRelic(new FoldingChair(), RelicType.RED);
         BaseMod.addRelic(new AntiAntidote(), RelicType.GREEN);
         BaseMod.addRelic(new Windchimes(), RelicType.GREEN);
         BaseMod.addRelic(new BlackMirror(), RelicType.BLUE);
