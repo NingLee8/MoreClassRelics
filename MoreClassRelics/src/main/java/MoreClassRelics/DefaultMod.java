@@ -284,6 +284,7 @@ public class DefaultMod implements
 
         BaseMod.addRelic(new GhostPepper(), RelicType.RED);
         BaseMod.addRelic(new AntiAntidote(), RelicType.GREEN);
+        BaseMod.addRelic(new Windchimes(), RelicType.GREEN);
         BaseMod.addRelic(new BlackMirror(), RelicType.BLUE);
         BaseMod.addRelic(new WolfsFang(), RelicType.PURPLE);
         BaseMod.addRelic(new FadedBookmark(), RelicType.PURPLE);

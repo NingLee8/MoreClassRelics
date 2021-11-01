@@ -13,11 +13,25 @@
       "Poison stacks no longer decrease."
     ]
   },
+  "MoreClassRelics:Windchimes": {
+    "NAME": "Windchimes",
+    "FLAVOR": "Let your worries fade away like the breeze",
+    "DESCRIPTIONS": [
+      "Whenever you discard a Curse, gain 1 Strength"
+    ]
+  },
   "MoreClassRelics:BlackMirror": {
     "NAME": "Black Mirror",
     "FLAVOR": "It's just your reflection.",
     "DESCRIPTIONS": [
       "Whenever you evoke a Dark orb, trigger the passive ability of all other Dark orbs."
+    ]
+  },
+  "MoreClassRelics:ColdBattery": {
+    "NAME": "Cold Battery",
+    "FLAVOR": "Don't lick it.",
+    "DESCRIPTIONS": [
+      "Swap the base values of Lightning Orbs and Frost Orbs"
     ]
   },
   "MoreClassRelics:WolfsFang": {
