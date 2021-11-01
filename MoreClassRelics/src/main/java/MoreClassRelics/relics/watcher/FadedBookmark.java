@@ -1,4 +1,4 @@
-package MoreClassRelics.relics;
+package MoreClassRelics.relics.watcher;
 
 import MoreClassRelics.DefaultMod;
 import MoreClassRelics.util.TextureLoader;

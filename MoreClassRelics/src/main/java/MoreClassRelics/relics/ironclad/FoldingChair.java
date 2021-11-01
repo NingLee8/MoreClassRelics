@@ -1,4 +1,4 @@
-package MoreClassRelics.relics;
+package MoreClassRelics.relics.ironclad;
 
 import MoreClassRelics.DefaultMod;
 import MoreClassRelics.util.TextureLoader;

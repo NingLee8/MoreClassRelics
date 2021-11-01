@@ -1,21 +1,32 @@
-package MoreClassRelics.relics;
+package MoreClassRelics.relics.defect;
 
 import MoreClassRelics.DefaultMod;
 import MoreClassRelics.util.TextureLoader;
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
+import com.megacrit.cardcrawl.actions.defect.DarkImpulseAction;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 import static MoreClassRelics.DefaultMod.makeRelicOutlinePath;
 import static MoreClassRelics.DefaultMod.makeRelicPath;
 
-public class AntiAntidote extends CustomRelic {
-    public static final String ID = DefaultMod.makeID("AntiAntidote");
+public class BlackMirror extends CustomRelic {
+    public static final String ID = DefaultMod.makeID("BlackMirror");
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("ghost_pepper.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("ghost_pepper.png"));
 
-    public AntiAntidote() {
-        super(ID, IMG, OUTLINE, RelicTier.COMMON, LandingSound.CLINK);
+    public BlackMirror() {
+        super(ID, IMG, OUTLINE, RelicTier.UNCOMMON, LandingSound.MAGICAL);
+    }
+
+    @Override
+    public void onEvokeOrb(AbstractOrb ammo) {
+        super.onEvokeOrb(ammo);
+        if ("Dark".equals(ammo.ID)) {
+            AbstractDungeon.actionManager.addToTop(new DarkImpulseAction());
+        }
     }
 
     @Override
@@ -25,6 +36,6 @@ public class AntiAntidote extends CustomRelic {
 
     @Override
     public AbstractRelic makeCopy() {
-        return new AntiAntidote();
+        return new BlackMirror();
     }
 }

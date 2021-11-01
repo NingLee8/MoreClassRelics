@@ -1,6 +1,13 @@
 package MoreClassRelics;
 
-import MoreClassRelics.relics.*;
+import MoreClassRelics.relics.defect.BlackMirror;
+import MoreClassRelics.relics.ironclad.FoldingChair;
+import MoreClassRelics.relics.ironclad.GhostPepper;
+import MoreClassRelics.relics.ironclad.JackInTheBox;
+import MoreClassRelics.relics.silent.AntiAntidote;
+import MoreClassRelics.relics.silent.Windchimes;
+import MoreClassRelics.relics.watcher.FadedBookmark;
+import MoreClassRelics.relics.watcher.WolfsFang;
 import basemod.*;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;

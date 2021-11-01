@@ -1,4 +1,4 @@
-package MoreClassRelics.relics;
+package MoreClassRelics.relics.silent;
 
 import MoreClassRelics.DefaultMod;
 import MoreClassRelics.patches.relicinterfaces.BetterOnDiscardRelic;
