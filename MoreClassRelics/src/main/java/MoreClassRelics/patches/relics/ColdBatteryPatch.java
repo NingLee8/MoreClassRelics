@@ -11,30 +11,30 @@ import com.megacrit.cardcrawl.orbs.Lightning;
  public class ColdBatteryPatch {
      @SpirePatch2(
              clz= Frost.class,
-             method=SpirePatch.CONSTRUCTOR
+             method="updateDescription"
      )
      public static class ColdBatteryFrostPatch {
 
-         @SpirePostfixPatch
-         public static void changeBaseAmounts(int ___passiveAmount, int ___evokeAmount) {
+         @SpirePrefixPatch
+         public static void changeBaseAmounts(@ByRef int[] ___basePassiveAmount, @ByRef int[] ___baseEvokeAmount) {
              if (AbstractDungeon.player.hasRelic(DefaultMod.makeID("ColdBattery"))) {
-                 ___passiveAmount = 3;
-                 ___evokeAmount = 6;
+                 ___basePassiveAmount[0] = 3;
+                 ___baseEvokeAmount[0] = 8;
              }
          }
      }
 
      @SpirePatch2(
              clz= Lightning.class,
-             method=SpirePatch.CONSTRUCTOR
+             method="updateDescription"
      )
      public static class ColdBatteryLightningPatch {
 
-         @SpirePostfixPatch
-         public static void changeBaseAmounts(Lightning __instance, int ___passiveAmount, int ___evokeAmount) {
+         @SpirePrefixPatch
+         public static void changeBaseAmounts(@ByRef int[] ___basePassiveAmount, @ByRef int[] ___baseEvokeAmount) {
              if (AbstractDungeon.player.hasRelic(DefaultMod.makeID("ColdBattery"))) {
-                 ___passiveAmount = 2;
-                 ___evokeAmount = 7;
+                 ___basePassiveAmount[0] = 2;
+                 ___baseEvokeAmount[0] = 5;
              }
          }
      }

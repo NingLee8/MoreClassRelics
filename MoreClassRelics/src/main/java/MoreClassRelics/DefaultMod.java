@@ -1,12 +1,17 @@
 package MoreClassRelics;
 
 import MoreClassRelics.relics.defect.BlackMirror;
+import MoreClassRelics.relics.defect.ColdBattery;
+import MoreClassRelics.relics.defect.GlassCog;
+import MoreClassRelics.relics.ironclad.BurningCoal;
 import MoreClassRelics.relics.ironclad.FoldingChair;
 import MoreClassRelics.relics.ironclad.GhostPepper;
 import MoreClassRelics.relics.ironclad.JackInTheBox;
 import MoreClassRelics.relics.silent.AntiAntidote;
+import MoreClassRelics.relics.silent.PorcelainTeacup;
 import MoreClassRelics.relics.silent.Windchimes;
 import MoreClassRelics.relics.watcher.FadedBookmark;
+import MoreClassRelics.relics.watcher.EmperorsAnkh;
 import MoreClassRelics.relics.watcher.WolfsFang;
 import basemod.*;
 import basemod.helpers.RelicType;
@@ -292,11 +297,19 @@ public class DefaultMod implements
         BaseMod.addRelic(new GhostPepper(), RelicType.RED);
         BaseMod.addRelic(new JackInTheBox(), RelicType.RED);
         BaseMod.addRelic(new FoldingChair(), RelicType.RED);
+        BaseMod.addRelic(new BurningCoal(), RelicType.RED);
+
         BaseMod.addRelic(new AntiAntidote(), RelicType.GREEN);
         BaseMod.addRelic(new Windchimes(), RelicType.GREEN);
+        BaseMod.addRelic(new PorcelainTeacup(), RelicType.GREEN);
+
         BaseMod.addRelic(new BlackMirror(), RelicType.BLUE);
+        BaseMod.addRelic(new GlassCog(), RelicType.BLUE);
+        BaseMod.addRelic(new ColdBattery(), RelicType.BLUE);
+
         BaseMod.addRelic(new WolfsFang(), RelicType.PURPLE);
         BaseMod.addRelic(new FadedBookmark(), RelicType.PURPLE);
+        BaseMod.addRelic(new EmperorsAnkh(), RelicType.PURPLE);
         // Mark relics as seen - makes it visible in the compendium immediately
         // If you don't have this it won't be visible in the compendium until you see them in game
         // (the others are all starters so they're marked as seen in the character file)

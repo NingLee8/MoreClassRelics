@@ -20,6 +20,13 @@
       "Whenever you deal unblocked damage to a non-minion enemy equal to or greater than 50% of their max HP, heal 4 HP."
     ]
   },
+  "MoreClassRelics:BurningCoal": {
+    "NAME": "Burning Coal",
+    "FLAVOR": "Keeps the engine going",
+    "DESCRIPTIONS": [
+      "The first time you exhaust a card each turn, gain 1 energy."
+    ]
+  },
   "MoreClassRelics:AntiAntidote": {
     "NAME": "Anti-antidote",
     "FLAVOR": "Not FDA approved.",
@@ -32,6 +39,13 @@
     "FLAVOR": "Let your worries fade away like the breeze",
     "DESCRIPTIONS": [
       "Whenever you discard a Curse, gain 1 Strength"
+    ]
+  },
+  "MoreClassRelics:PorcelainTeacup": {
+    "NAME": "Porcelain Teacup",
+    "FLAVOR": "Tastes like bitter almonds.",
+    "DESCRIPTIONS": [
+      "Whenever you discard a card, apply 1 poison to all enemies"
     ]
   },
   "MoreClassRelics:BlackMirror": {
@@ -48,6 +62,13 @@
       "Swap the base values of Lightning Orbs and Frost Orbs"
     ]
   },
+  "MoreClassRelics:GlassCog": {
+    "NAME": "Glass Cog",
+    "FLAVOR": "Does this do anything?",
+    "DESCRIPTIONS": [
+      "If you start your turn with no channeled Orbs, draw 2 cards."
+    ]
+  },
   "MoreClassRelics:WolfsFang": {
     "NAME": "Wolf's Fang",
     "FLAVOR": "It's sharp to the touch... and so are you.",
@@ -60,6 +81,13 @@
     "FLAVOR": "It's okay if you don't remember where you left off.",
     "DESCRIPTIONS": [
       "At the end of your turn, deal damage to all enemies equal to the number of cards you Retain."
+    ]
+  },
+  "MoreClassRelics:EmperorsAnkh": {
+    "NAME": "Ankh of the Emperor",
+    "FLAVOR": "Long may he reign.",
+    "DESCRIPTIONS": [
+      "Whenever you Scry, gain 1 Mantra for each card you discard."
     ]
   }
 }
