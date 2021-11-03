@@ -10,6 +10,7 @@ import MoreClassRelics.relics.ironclad.JackInTheBox;
 import MoreClassRelics.relics.silent.AntiAntidote;
 import MoreClassRelics.relics.silent.PorcelainTeacup;
 import MoreClassRelics.relics.silent.Windchimes;
+import MoreClassRelics.relics.watcher.Bonsai;
 import MoreClassRelics.relics.watcher.FadedBookmark;
 import MoreClassRelics.relics.watcher.EmperorsAnkh;
 import MoreClassRelics.relics.watcher.WolfsFang;
@@ -309,6 +310,7 @@ public class DefaultMod implements
 
         BaseMod.addRelic(new WolfsFang(), RelicType.PURPLE);
         BaseMod.addRelic(new FadedBookmark(), RelicType.PURPLE);
+        BaseMod.addRelic(new Bonsai(), RelicType.PURPLE);
         BaseMod.addRelic(new EmperorsAnkh(), RelicType.PURPLE);
         // Mark relics as seen - makes it visible in the compendium immediately
         // If you don't have this it won't be visible in the compendium until you see them in game

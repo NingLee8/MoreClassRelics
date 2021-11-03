@@ -83,6 +83,13 @@
       "At the end of your turn, deal damage to all enemies equal to the number of cards you Retain."
     ]
   },
+  "MoreClassRelics:Bonsai": {
+    "NAME": "Bonsai Tree",
+    "FLAVOR": "It's okay if you don't remember where you left off.",
+    "DESCRIPTIONS": [
+      "Whenever you play a card created during combat, gain 1 Temporary Strength"
+    ]
+  },
   "MoreClassRelics:EmperorsAnkh": {
     "NAME": "Ankh of the Emperor",
     "FLAVOR": "Long may he reign.",
