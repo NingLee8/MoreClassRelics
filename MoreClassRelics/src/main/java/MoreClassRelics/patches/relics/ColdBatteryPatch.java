@@ -9,10 +9,7 @@ import com.megacrit.cardcrawl.orbs.Lightning;
 
 
  public class ColdBatteryPatch {
-     @SpirePatch2(
-             clz= Frost.class,
-             method="updateDescription"
-     )
+     @SpirePatch2(clz= Frost.class, method="updateDescription")
      public static class ColdBatteryFrostPatch {
 
          @SpirePrefixPatch
@@ -24,10 +21,7 @@ import com.megacrit.cardcrawl.orbs.Lightning;
          }
      }
 
-     @SpirePatch2(
-             clz= Lightning.class,
-             method="updateDescription"
-     )
+     @SpirePatch2(clz= Lightning.class, method="updateDescription")
      public static class ColdBatteryLightningPatch {
 
          @SpirePrefixPatch

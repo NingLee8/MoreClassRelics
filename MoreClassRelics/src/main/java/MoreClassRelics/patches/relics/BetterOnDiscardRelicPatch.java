@@ -11,29 +11,17 @@ import javassist.CtBehavior;
 
 public class BetterOnDiscardRelicPatch {
 
-    @SpirePatch2(
-            clz = DiscardAction.class,
-            method = "update"
-
-    )
+    @SpirePatch2(clz = DiscardAction.class, method = "update")
     public static class BetterOnDiscardRelicActionPatch {
-        @SpireInsertPatch(
-                locator = BetterOnDiscardRelicPatch.Locator.class,
-                localvars={"c"}
-        )
+        @SpireInsertPatch(locator = BetterOnDiscardRelicPatch.Locator.class, localvars={"c"})
         public static void Insert(DiscardAction __instance, AbstractCard c) {
            Do(c);
         }
     }
 
-    @SpirePatch2(
-            clz = DiscardSpecificCardAction.class,
-            method = "update"
-    )
+    @SpirePatch2(clz = DiscardSpecificCardAction.class, method = "update")
     public static class BetterOnDiscardRelicSpecificCardActionPatch {
-        @SpireInsertPatch(
-                locator = BetterOnDiscardRelicPatch.Locator.class
-        )
+        @SpireInsertPatch(locator = BetterOnDiscardRelicPatch.Locator.class)
         public static void Insert(AbstractCard ___targetCard) {
             Do(___targetCard);
         }
