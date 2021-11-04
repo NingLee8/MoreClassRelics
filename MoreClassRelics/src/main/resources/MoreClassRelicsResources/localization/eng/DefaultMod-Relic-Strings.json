@@ -17,7 +17,7 @@
     "NAME": "Folding Chair",
     "FLAVOR": "IRONCLAD WITH THE FOLDING CHAIR!",
     "DESCRIPTIONS": [
-      "Whenever you deal unblocked damage to a non-minion enemy equal to or greater than 50% of their max HP, heal 4 HP."
+      "Whenever you deal unblocked damage to a non-minion enemy equal to or greater than 50% of their max HP, heal 3 HP."
     ]
   },
   "MoreClassRelics:BurningCoal": {
@@ -52,7 +52,7 @@
     "NAME": "Porcelain Teacup",
     "FLAVOR": "Tastes like bitter almonds.",
     "DESCRIPTIONS": [
-      "Whenever you discard a card, apply 1 poison to all enemies"
+      "Whenever you discard a card, apply 1 poison to a random enemy"
     ]
   },
   "MoreClassRelics:BlackMirror": {

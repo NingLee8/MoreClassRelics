@@ -31,10 +31,9 @@ public class PorcelainTeacup extends CustomRelic {
         this.flash();
         this.addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
 
-        for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
-            if (!m.isDead && !m.isDying) {
-                this.addToBot(new ApplyPowerAction(m, AbstractDungeon.player, new PoisonPower(m, AbstractDungeon.player, 1), 1));
-            }
+        AbstractMonster randomMonster = AbstractDungeon.getMonsters().getRandomMonster((AbstractMonster)null, true, AbstractDungeon.cardRandomRng);
+        if (!randomMonster.isDead && !randomMonster.isDying) {
+            this.addToBot(new ApplyPowerAction(randomMonster, AbstractDungeon.player, new PoisonPower(randomMonster, AbstractDungeon.player, 1), 1));
         }
     }
 
