@@ -18,8 +18,8 @@ import static MoreClassRelics.DefaultMod.makeRelicPath;
 
 public class Bonsai extends CustomRelic {
     public static final String ID = DefaultMod.makeID("Bonsai");
-    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("ghost_pepper.png"));
-    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("ghost_pepper.png"));
+    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("bonsai.png"));
+    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("bonsai_outline.png"));
 
     public Bonsai() {
         super(ID, IMG, OUTLINE, RelicTier.RARE, LandingSound.MAGICAL);
