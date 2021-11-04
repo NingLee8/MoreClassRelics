@@ -15,7 +15,7 @@ public class CoiledNail extends CustomRelic {
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("ghost_pepper.png"));
 
     public CoiledNail() {
-        super(ID, IMG, OUTLINE, RelicTier.COMMON, LandingSound.SOLID);
+        super(ID, IMG, OUTLINE, RelicTier.RARE, LandingSound.SOLID);
     }
 
     @Override
