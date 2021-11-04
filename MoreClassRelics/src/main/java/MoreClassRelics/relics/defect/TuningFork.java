@@ -18,7 +18,7 @@ import static MoreClassRelics.DefaultMod.makeRelicPath;
 
 public class TuningFork extends CustomRelic {
     public static final String ID = DefaultMod.makeID("TuningFork");
-    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("ghost_pepper.png"));
+    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("tuning_fork.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("ghost_pepper.png"));
 
     public TuningFork() {
