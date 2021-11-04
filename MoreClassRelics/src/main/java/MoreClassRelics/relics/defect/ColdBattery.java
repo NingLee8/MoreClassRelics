@@ -12,7 +12,7 @@ import static MoreClassRelics.DefaultMod.makeRelicPath;
 public class ColdBattery extends CustomRelic {
     public static final String ID = DefaultMod.makeID("ColdBattery");
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("cold_battery.png"));
-    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("cold_battery.png"));
+    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("cold_battery_outline.png"));
 
     public ColdBattery() {
         super(ID, IMG, OUTLINE, RelicTier.SHOP, LandingSound.CLINK);
