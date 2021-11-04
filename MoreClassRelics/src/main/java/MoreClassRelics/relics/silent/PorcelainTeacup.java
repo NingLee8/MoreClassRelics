@@ -23,7 +23,7 @@ public class PorcelainTeacup extends CustomRelic {
 
 
     public PorcelainTeacup() {
-        super(ID, IMG, OUTLINE, RelicTier.BOSS, LandingSound.HEAVY);
+        super(ID, IMG, OUTLINE, RelicTier.RARE, LandingSound.CLINK);
     }
 
 

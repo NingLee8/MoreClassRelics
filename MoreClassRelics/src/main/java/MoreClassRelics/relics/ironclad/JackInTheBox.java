@@ -23,7 +23,7 @@ public class JackInTheBox extends CustomRelic {
     private boolean triggeredThisTurn = false;
 
     public JackInTheBox() {
-        super(ID, IMG, OUTLINE, RelicTier.UNCOMMON, LandingSound.SOLID);
+        super(ID, IMG, OUTLINE, RelicTier.UNCOMMON, LandingSound.HEAVY);
     }
 
     public void atBattleStart() {

@@ -39,7 +39,7 @@ public class Windchimes extends CustomRelic implements BetterOnDiscardRelic {
     public void betterOnDiscardRelic(AbstractCard card) {
         if (AbstractCard.CardType.CURSE.equals(card.type)) {
             this.flash();
-            CardCrawlGame.sound.play("TINGSHA");
+            CardCrawlGame.sound.play("RELIC_DROP_MAGICAL");
             this.addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
             this.addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, 1), 1));
         }

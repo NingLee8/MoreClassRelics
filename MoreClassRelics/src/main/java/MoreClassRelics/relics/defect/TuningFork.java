@@ -22,7 +22,7 @@ public class TuningFork extends CustomRelic {
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("ghost_pepper.png"));
 
     public TuningFork() {
-        super(ID, IMG, OUTLINE, RelicTier.UNCOMMON, LandingSound.MAGICAL);
+        super(ID, IMG, OUTLINE, RelicTier.BOSS, LandingSound.CLINK);
     }
 
     public void onEvokeOrb(AbstractOrb ammo) {

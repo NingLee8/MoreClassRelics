@@ -22,7 +22,7 @@ public class FoldingChair extends CustomRelic {
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("ghost_pepper.png"));
 
     public FoldingChair() {
-        super(ID, IMG, OUTLINE, RelicTier.UNCOMMON, LandingSound.SOLID);
+        super(ID, IMG, OUTLINE, RelicTier.RARE, LandingSound.HEAVY);
     }
 
     public void onPlayCard(AbstractCard c, AbstractMonster m) {
