@@ -1,7 +1,7 @@
 {
   "MoreClassRelics:GhostPepper": {
     "NAME": "Ghost Pepper",
-    "FLAVOR": "Spicy!",
+    "FLAVOR": "Don't eat me or I'll haunt you!",
     "DESCRIPTIONS": [
       "Take 16 Damage. Increase your Max HP by 16."
     ]
@@ -36,7 +36,7 @@
   },
   "MoreClassRelics:Windchimes": {
     "NAME": "Windchimes",
-    "FLAVOR": "Let your worries fade away like the breeze",
+    "FLAVOR": "Let your worries fade away in the breeze",
     "DESCRIPTIONS": [
       "Whenever you discard a Curse, gain 1 Strength"
     ]
@@ -78,14 +78,14 @@
   },
   "MoreClassRelics:TuningFork": {
     "NAME": "Tuning Fork",
-    "FLAVOR": "",
+    "FLAVOR": "A single pure note drifts through the air for a moment.",
     "DESCRIPTIONS": [
       "Whenever you evoke an Orb, gain 1 Temporary Focus"
     ]
   },
   "MoreClassRelics:WolfsFang": {
     "NAME": "Wolf's Fang",
-    "FLAVOR": "It's sharp to the touch... and so are you.",
+    "FLAVOR": "It's sharp to the touch.",
     "DESCRIPTIONS": [
       "If you start your turn in Wrath stance, draw an additional card."
     ]
