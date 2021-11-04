@@ -1,1 +1,8 @@
-{}
+{
+  "MoreClassRelics:LoseFocusPower": {
+    "NAME": "Focus Down",
+    "DESCRIPTIONS": [
+      "At the end of your turn, lose ", " Focus"
+    ]
+  }
+}

@@ -1,30 +1,21 @@
-package MoreClassRelics.relics.defect;
+package MoreClassRelics.relics.silent;
 
 import MoreClassRelics.DefaultMod;
 import MoreClassRelics.util.TextureLoader;
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
-import com.megacrit.cardcrawl.actions.defect.DarkImpulseAction;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 import static MoreClassRelics.DefaultMod.makeRelicOutlinePath;
 import static MoreClassRelics.DefaultMod.makeRelicPath;
 
-public class BlackMirror extends CustomRelic {
-    public static final String ID = DefaultMod.makeID("BlackMirror");
+public class CoiledNail extends CustomRelic {
+    public static final String ID = DefaultMod.makeID("CoiledNail");
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("ghost_pepper.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("ghost_pepper.png"));
 
-    public BlackMirror() {
-        super(ID, IMG, OUTLINE, RelicTier.UNCOMMON, LandingSound.MAGICAL);
-    }
-
-    public void onEvokeOrb(AbstractOrb ammo) {
-        if ("Dark".equals(ammo.ID)) {
-            AbstractDungeon.actionManager.addToTop(new DarkImpulseAction());
-        }
+    public CoiledNail() {
+        super(ID, IMG, OUTLINE, RelicTier.COMMON, LandingSound.SOLID);
     }
 
     @Override
@@ -34,6 +25,6 @@ public class BlackMirror extends CustomRelic {
 
     @Override
     public AbstractRelic makeCopy() {
-        return new BlackMirror();
+        return new CoiledNail();
     }
 }

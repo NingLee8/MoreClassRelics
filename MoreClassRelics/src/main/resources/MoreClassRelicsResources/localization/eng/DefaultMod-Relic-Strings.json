@@ -41,6 +41,13 @@
       "Whenever you discard a Curse, gain 1 Strength"
     ]
   },
+  "MoreClassRelics:CoiledNail": {
+    "NAME": "Coiled Nail",
+    "FLAVOR": "Higher being, this relic is for you alone.",
+    "DESCRIPTIONS": [
+      "Whenever you add a Shiv to your hand, add one more."
+    ]
+  },
   "MoreClassRelics:PorcelainTeacup": {
     "NAME": "Porcelain Teacup",
     "FLAVOR": "Tastes like bitter almonds.",
@@ -69,6 +76,13 @@
       "If you start your turn with no channeled Orbs, draw 2 cards."
     ]
   },
+  "MoreClassRelics:TuningFork": {
+    "NAME": "Tuning Fork",
+    "FLAVOR": "",
+    "DESCRIPTIONS": [
+      "Whenever you evoke an Orb, gain 1 Temporary Focus"
+    ]
+  },
   "MoreClassRelics:WolfsFang": {
     "NAME": "Wolf's Fang",
     "FLAVOR": "It's sharp to the touch... and so are you.",
@@ -85,7 +99,7 @@
   },
   "MoreClassRelics:Bonsai": {
     "NAME": "Bonsai Tree",
-    "FLAVOR": "It's okay if you don't remember where you left off.",
+    "FLAVOR": "Leaves from the vine, falling so slow.",
     "DESCRIPTIONS": [
       "Whenever you play a card created during combat, gain 1 Temporary Strength"
     ]

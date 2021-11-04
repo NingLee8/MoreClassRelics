@@ -3,11 +3,13 @@ package MoreClassRelics;
 import MoreClassRelics.relics.defect.BlackMirror;
 import MoreClassRelics.relics.defect.ColdBattery;
 import MoreClassRelics.relics.defect.GlassCog;
+import MoreClassRelics.relics.defect.TuningFork;
 import MoreClassRelics.relics.ironclad.BurningCoal;
 import MoreClassRelics.relics.ironclad.FoldingChair;
 import MoreClassRelics.relics.ironclad.GhostPepper;
 import MoreClassRelics.relics.ironclad.JackInTheBox;
 import MoreClassRelics.relics.silent.AntiAntidote;
+import MoreClassRelics.relics.silent.CoiledNail;
 import MoreClassRelics.relics.silent.PorcelainTeacup;
 import MoreClassRelics.relics.silent.Windchimes;
 import MoreClassRelics.relics.watcher.Bonsai;
@@ -113,6 +115,10 @@ public class DefaultMod implements
     
     public static String makeRelicOutlinePath(String resourcePath) {
         return getModID() + "Resources/images/relics/outline/" + resourcePath;
+    }
+
+    public static String makePowerPath(String resourcePath) {
+        return getModID() + "Resources/images/powers/" + resourcePath;
     }
 
     // =============== /MAKE IMAGE PATHS/ =================
@@ -303,10 +309,12 @@ public class DefaultMod implements
         BaseMod.addRelic(new AntiAntidote(), RelicType.GREEN);
         BaseMod.addRelic(new Windchimes(), RelicType.GREEN);
         BaseMod.addRelic(new PorcelainTeacup(), RelicType.GREEN);
+        BaseMod.addRelic(new CoiledNail(), RelicType.GREEN);
 
         BaseMod.addRelic(new BlackMirror(), RelicType.BLUE);
         BaseMod.addRelic(new GlassCog(), RelicType.BLUE);
         BaseMod.addRelic(new ColdBattery(), RelicType.BLUE);
+        BaseMod.addRelic(new TuningFork(), RelicType.BLUE);
 
         BaseMod.addRelic(new WolfsFang(), RelicType.PURPLE);
         BaseMod.addRelic(new FadedBookmark(), RelicType.PURPLE);
@@ -326,6 +334,10 @@ public class DefaultMod implements
     @Override
     public void receiveEditStrings() {
         logger.info("Beginning to edit strings for mod with ID: " + getModID());
+
+        // PowerStrings
+        BaseMod.loadCustomStringsFile(PowerStrings.class,
+                getModID() + "Resources/localization/eng/DefaultMod-Power-Strings.json");
 
         // RelicStrings
         BaseMod.loadCustomStringsFile(RelicStrings.class,
