@@ -16,7 +16,7 @@ import static MoreClassRelics.DefaultMod.makeRelicPath;
 public class GhostPepper extends CustomRelic {
     public static final String ID = DefaultMod.makeID("GhostPepper");
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("ghost_pepper.png"));
-    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("ghost_pepper.png"));
+    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("ghost_pepper_outline.png"));
     private static final int HP_AMT = 16;
 
     public GhostPepper() {
