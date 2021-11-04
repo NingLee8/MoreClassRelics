@@ -21,9 +21,6 @@ public class LoseFocusPower extends AbstractPower implements CloneablePowerInter
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("placeholder_power84.png"));
-    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("placeholder_power32.png"));
-
     public LoseFocusPower(AbstractCreature owner, int amount) {
         this.ID = POWER_ID;
         this.name = NAME;
@@ -32,8 +29,7 @@ public class LoseFocusPower extends AbstractPower implements CloneablePowerInter
         this.owner = owner;
         this.isTurnBased = false;
 
-        this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
-        this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
+        this.loadRegion("bias");
 
         this.updateDescription();
     }
