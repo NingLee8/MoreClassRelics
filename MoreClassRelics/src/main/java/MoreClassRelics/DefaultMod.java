@@ -52,8 +52,14 @@ public class DefaultMod implements
 
     // Mod-settings settings. This is if you want an on/off savable button
     public static Properties defaultSettings = new Properties();
-    public static final String ENABLE_PLACEHOLDER_SETTINGS = "enablePlaceholder";
-    public static boolean enablePlaceholder = true; // The boolean we'll be setting on/off (true/false)
+    public static final String ENABLE_IRONCLAD_RELICS = "enableIroncladRelics";
+    public static final String ENABLE_SILENT_RELICS = "enableSilentRelics";
+    public static final String ENABLE_DEFECT_RELICS = "enableDefectRelics";
+    public static final String ENABLE_WATCHER_RELICS = "enableWatcherRelics";
+    public static boolean enableIroncladRelics = true;
+    public static boolean enableSilentRelics = true;
+    public static boolean enableDefectRelics = true;
+    public static boolean enableWatcherRelics = true;
 
     //This is for the in-game mod settings panel.
     private static final String MODNAME = "More Class Relics";
@@ -91,12 +97,18 @@ public class DefaultMod implements
         logger.info("Adding mod settings");
         // This loads the mod settings.
         // The actual mod Button is added below in receivePostInitialize()
-        defaultSettings.setProperty(ENABLE_PLACEHOLDER_SETTINGS, "FALSE"); // This is the default setting. It's actually set...
+        defaultSettings.setProperty(ENABLE_IRONCLAD_RELICS, "TRUE");
+        defaultSettings.setProperty(ENABLE_SILENT_RELICS, "TRUE");
+        defaultSettings.setProperty(ENABLE_DEFECT_RELICS, "TRUE");
+        defaultSettings.setProperty(ENABLE_WATCHER_RELICS, "TRUE");
+
         try {
-            SpireConfig config = new SpireConfig("defaultMod", "theDefaultConfig", defaultSettings); // ...right here
-            // the "fileName" parameter is the name of the file MTS will create where it will save our setting.
-            config.load(); // Load the setting and set the boolean to equal it
-            enablePlaceholder = config.getBool(ENABLE_PLACEHOLDER_SETTINGS);
+            SpireConfig config = new SpireConfig(MODNAME, getModID() + "Config", defaultSettings);
+            config.load();
+            enableIroncladRelics = config.getBool(ENABLE_IRONCLAD_RELICS);
+            enableSilentRelics = config.getBool(ENABLE_SILENT_RELICS);
+            enableDefectRelics = config.getBool(ENABLE_DEFECT_RELICS);
+            enableWatcherRelics = config.getBool(ENABLE_WATCHER_RELICS);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -154,34 +166,70 @@ public class DefaultMod implements
     @Override
     public void receivePostInitialize() {
         logger.info("Loading badge image and mod options");
-        
-        // Load the Mod Badge
+
         Texture badgeTexture = TextureLoader.getTexture(BADGE_IMAGE);
-        
-        // Create the Mod Menu
+
         ModPanel settingsPanel = new ModPanel();
-        
-        // Create the on/off button:
-        ModLabeledToggleButton enableNormalsButton = new ModLabeledToggleButton("This is the text which goes next to the checkbox.",
-                350.0f, 700.0f, Settings.CREAM_COLOR, FontHelper.charDescFont, // Position (trial and error it), color, font
-                enablePlaceholder, // Boolean it uses
-                settingsPanel, // The mod panel in which this button will be in
-                (label) -> {}, // thing??????? idk
-                (button) -> { // The actual button:
-            
-            enablePlaceholder = button.enabled; // The boolean true/false will be whether the button is enabled or not
+
+        ModLabeledToggleButton enableIroncladRelicsButton = new ModLabeledToggleButton("Enable Ironclad Relics",
+                350.0f, 700.0f, Settings.RED_RELIC_COLOR, FontHelper.charDescFont,
+                enableIroncladRelics, settingsPanel, (label) -> {},
+                (button) -> {
+            enableIroncladRelics = button.enabled;
             try {
-                // And based on that boolean, set the settings and save them
-                SpireConfig config = new SpireConfig(MODNAME, MODNAME + "Config", defaultSettings);
-                config.setBool(ENABLE_PLACEHOLDER_SETTINGS, enablePlaceholder);
+                SpireConfig config = new SpireConfig(MODNAME, getModID() + "Config", defaultSettings);
+                config.setBool(ENABLE_IRONCLAD_RELICS, enableIroncladRelics);
                 config.save();
             } catch (Exception e) {
                 e.printStackTrace();
             }
         });
+
+        ModLabeledToggleButton enableSilentRelicsButton = new ModLabeledToggleButton("Enable Silent Relics",
+                350.0f, 660.0f, Settings.GREEN_RELIC_COLOR, FontHelper.charDescFont,
+                enableSilentRelics, settingsPanel, (label) -> {},
+                (button) -> {
+                    enableSilentRelics = button.enabled;
+                    try {
+                        SpireConfig config = new SpireConfig(MODNAME, getModID() + "Config", defaultSettings);
+                        config.setBool(ENABLE_SILENT_RELICS, enableSilentRelics);
+                        config.save();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                });
+        ModLabeledToggleButton enableDefectRelicsButton = new ModLabeledToggleButton("Enable Defect Relics",
+                350.0f, 620.0f, Settings.BLUE_RELIC_COLOR, FontHelper.charDescFont,
+                enableDefectRelics, settingsPanel, (label) -> {},
+                (button) -> {
+                    enableDefectRelics = button.enabled;
+                    try {
+                        SpireConfig config = new SpireConfig(MODNAME, getModID() + "Config", defaultSettings);
+                        config.setBool(ENABLE_DEFECT_RELICS, enableDefectRelics);
+                        config.save();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                });
+        ModLabeledToggleButton enableWatcherRelicsButton = new ModLabeledToggleButton("Enable Watcher Relics",
+                350.0f, 580.0f, Settings.PURPLE_RELIC_COLOR, FontHelper.charDescFont,
+                enableWatcherRelics, settingsPanel, (label) -> {},
+                (button) -> {
+                    enableWatcherRelics = button.enabled;
+                    try {
+                        SpireConfig config = new SpireConfig(MODNAME, getModID() + "Config", defaultSettings);
+                        config.setBool(ENABLE_WATCHER_RELICS, enableWatcherRelics);
+                        config.save();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                });
         
-        settingsPanel.addUIElement(enableNormalsButton); // Add the button to the settings panel. Button is a go.
-        
+        settingsPanel.addUIElement(enableIroncladRelicsButton);
+        settingsPanel.addUIElement(enableSilentRelicsButton);
+        settingsPanel.addUIElement(enableDefectRelicsButton);
+        settingsPanel.addUIElement(enableWatcherRelicsButton);
+
         BaseMod.registerModBadge(badgeTexture, MODNAME, AUTHOR, DESCRIPTION, settingsPanel);
 
         logger.info("Done loading badge Image and mod options");
@@ -196,25 +244,33 @@ public class DefaultMod implements
     public void receiveEditRelics() {
         logger.info("Adding relics");
 
-        BaseMod.addRelic(new GhostPepper(), RelicType.RED);
-        BaseMod.addRelic(new JackInTheBox(), RelicType.RED);
-        BaseMod.addRelic(new FoldingChair(), RelicType.RED);
-        BaseMod.addRelic(new BurningCoal(), RelicType.RED);
+        if (enableIroncladRelics) {
+            BaseMod.addRelic(new GhostPepper(), RelicType.RED);
+            BaseMod.addRelic(new JackInTheBox(), RelicType.RED);
+            BaseMod.addRelic(new FoldingChair(), RelicType.RED);
+            BaseMod.addRelic(new BurningCoal(), RelicType.RED);
+        }
 
-        BaseMod.addRelic(new AntiAntidote(), RelicType.GREEN);
-        BaseMod.addRelic(new Windchimes(), RelicType.GREEN);
-        BaseMod.addRelic(new PorcelainTeacup(), RelicType.GREEN);
-        BaseMod.addRelic(new CoiledNail(), RelicType.GREEN);
+        if (enableSilentRelics) {
+            BaseMod.addRelic(new AntiAntidote(), RelicType.GREEN);
+            BaseMod.addRelic(new Windchimes(), RelicType.GREEN);
+            BaseMod.addRelic(new PorcelainTeacup(), RelicType.GREEN);
+            BaseMod.addRelic(new CoiledNail(), RelicType.GREEN);
+        }
 
-        BaseMod.addRelic(new BlackMirror(), RelicType.BLUE);
-        BaseMod.addRelic(new GlassCog(), RelicType.BLUE);
-        BaseMod.addRelic(new ColdBattery(), RelicType.BLUE);
-        BaseMod.addRelic(new TuningFork(), RelicType.BLUE);
+        if (enableDefectRelics) {
+            BaseMod.addRelic(new BlackMirror(), RelicType.BLUE);
+            BaseMod.addRelic(new GlassCog(), RelicType.BLUE);
+            BaseMod.addRelic(new ColdBattery(), RelicType.BLUE);
+            BaseMod.addRelic(new TuningFork(), RelicType.BLUE);
+        }
 
-        BaseMod.addRelic(new WolfsFang(), RelicType.PURPLE);
-        BaseMod.addRelic(new FadedBookmark(), RelicType.PURPLE);
-        BaseMod.addRelic(new Bonsai(), RelicType.PURPLE);
-        BaseMod.addRelic(new EmperorsAnkh(), RelicType.PURPLE);
+        if (enableWatcherRelics) {
+            BaseMod.addRelic(new WolfsFang(), RelicType.PURPLE);
+            BaseMod.addRelic(new FadedBookmark(), RelicType.PURPLE);
+            BaseMod.addRelic(new Bonsai(), RelicType.PURPLE);
+            BaseMod.addRelic(new EmperorsAnkh(), RelicType.PURPLE);
+        }
 
         logger.info("Done adding relics!");
     }

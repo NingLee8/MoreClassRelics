@@ -2,7 +2,7 @@
   "MoreClassRelics:LoseFocusPower": {
     "NAME": "Focus Down",
     "DESCRIPTIONS": [
-      "At the end of your turn, lose ", " Focus"
+      "At the end of your turn, lose #b", " Focus"
     ]
   }
 }

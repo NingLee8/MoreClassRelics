@@ -3,112 +3,112 @@
     "NAME": "Ghost Pepper",
     "FLAVOR": "Don't eat me or I'll haunt you!",
     "DESCRIPTIONS": [
-      "Take 16 Damage. Increase your Max HP by 16."
+      "Upon pickup, take #b16 Damage and raise your Max HP by #b16."
     ]
   },
   "MoreClassRelics:JackInTheBox": {
     "NAME": "Jack-in-the-box",
-    "FLAVOR": "Spicy!",
+    "FLAVOR": "I was hoping for a burger.",
     "DESCRIPTIONS": [
-      "The first time you take damage each round, deal that much to all enemies."
+      "The first time you take damage each round, deal that much to ALL enemies."
     ]
   },
   "MoreClassRelics:FoldingChair": {
     "NAME": "Folding Chair",
     "FLAVOR": "IRONCLAD WITH THE FOLDING CHAIR!",
     "DESCRIPTIONS": [
-      "Whenever you deal unblocked damage to a non-minion enemy equal to or greater than 50% of their max HP, heal 3 HP."
+      "Whenever you deal unblocked damage to a non-minion enemy for at least 50% of their max HP, heal #b3 HP."
     ]
   },
   "MoreClassRelics:BurningCoal": {
     "NAME": "Burning Coal",
     "FLAVOR": "Keeps the engine going",
     "DESCRIPTIONS": [
-      "The first time you exhaust a card each turn, gain 1 energy."
+      "The first time you #yExhaust a card each turn, gain [E]."
     ]
   },
   "MoreClassRelics:AntiAntidote": {
     "NAME": "Anti-antidote",
     "FLAVOR": "Not FDA approved.",
     "DESCRIPTIONS": [
-      "Poison stacks no longer decrease."
+      "#yPoison stacks no longer decrease."
     ]
   },
   "MoreClassRelics:Windchimes": {
     "NAME": "Windchimes",
     "FLAVOR": "Let your worries fade away in the breeze",
     "DESCRIPTIONS": [
-      "Whenever you discard a Curse, gain 1 Strength"
+      "Whenever you discard a #rCurse, gain #b1 #yStrength"
     ]
   },
   "MoreClassRelics:CoiledNail": {
     "NAME": "Coiled Nail",
-    "FLAVOR": "Higher being, this relic is for you alone.",
+    "FLAVOR": "Higher beings, this relic is for you alone.",
     "DESCRIPTIONS": [
-      "Whenever you add a Shiv to your hand, add one more."
+      "Whenever you add a #yShiv to your hand, add one more."
     ]
   },
   "MoreClassRelics:PorcelainTeacup": {
     "NAME": "Porcelain Teacup",
     "FLAVOR": "Tastes like bitter almonds.",
     "DESCRIPTIONS": [
-      "Whenever you discard a card, apply 1 poison to a random enemy"
+      "Whenever you discard a card, apply #b1 #yPoison to a random enemy"
     ]
   },
   "MoreClassRelics:BlackMirror": {
     "NAME": "Black Mirror",
     "FLAVOR": "It's just your reflection.",
     "DESCRIPTIONS": [
-      "Whenever you evoke a Dark orb, trigger the passive ability of all other Dark orbs."
+      "Whenever you #yEvoke a #yDark orb, trigger the passive ability of all other #yDark orbs."
     ]
   },
   "MoreClassRelics:ColdBattery": {
     "NAME": "Cold Battery",
     "FLAVOR": "Don't lick it.",
     "DESCRIPTIONS": [
-      "Swap the base values of Lightning Orbs and Frost Orbs"
+      "Swap the base values of #yLightning Orbs and #yFrost Orbs"
     ]
   },
   "MoreClassRelics:GlassCog": {
     "NAME": "Glass Cog",
     "FLAVOR": "Does this do anything?",
     "DESCRIPTIONS": [
-      "If you start your turn with no channeled Orbs, draw 2 cards."
+      "If you start your turn with no #yChanneled Orbs, draw #b2 cards."
     ]
   },
   "MoreClassRelics:TuningFork": {
     "NAME": "Tuning Fork",
     "FLAVOR": "A single pure note drifts through the air for a moment.",
     "DESCRIPTIONS": [
-      "Whenever you evoke an Orb, gain 1 Temporary Focus"
+      "Whenever you #yEvoke an Orb, gain #b1 temporary #yFocus"
     ]
   },
   "MoreClassRelics:WolfsFang": {
     "NAME": "Wolf's Fang",
-    "FLAVOR": "It's sharp to the touch.",
+    "FLAVOR": "It resonates with an insatiable hunger.",
     "DESCRIPTIONS": [
-      "If you start your turn in Wrath stance, draw an additional card."
+      "If you start your turn in #yWrath stance, draw an additional card."
     ]
   },
   "MoreClassRelics:FadedBookmark": {
     "NAME": "Faded Bookmark",
     "FLAVOR": "It's okay if you don't remember where you left off.",
     "DESCRIPTIONS": [
-      "At the end of your turn, deal damage to all enemies equal to the number of cards you Retain."
+      "At the end of your turn, deal damage to ALL enemies equal to the number of cards you #yRetain."
     ]
   },
   "MoreClassRelics:Bonsai": {
     "NAME": "Bonsai Tree",
     "FLAVOR": "Leaves from the vine, falling so slow.",
     "DESCRIPTIONS": [
-      "Whenever you play a card created during combat, gain 1 Temporary Strength"
+      "Whenever you play a card created during combat, gain #b1 temporary #yStrength"
     ]
   },
   "MoreClassRelics:EmperorsAnkh": {
     "NAME": "Ankh of the Emperor",
     "FLAVOR": "Long may he reign.",
     "DESCRIPTIONS": [
-      "Whenever you Scry, gain 1 Mantra for each card you discard."
+      "Whenever you #yScry, gain #b1 #yMantra for each card you discard."
     ]
   }
 }
