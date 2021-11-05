@@ -27,8 +27,10 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.*;
+import com.megacrit.cardcrawl.vfx.RestartForChangesEffect;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import MoreClassRelics.util.IDCheckDontTouchPls;
@@ -67,7 +69,7 @@ public class DefaultMod implements
     private static final String DESCRIPTION = "Mix of new class specific relics";
 
     //Mod Badge - A small icon that appears in the mod settings menu next to your mod.
-    public static final String BADGE_IMAGE = "MoreClassRelicsResources/images/Badge.png";
+    public static final String BADGE_IMAGE = "MoreClassRelicsResources/images/ghost_pepper_badge.png";
     
     // =============== MAKE IMAGE PATHS =================
 
@@ -224,7 +226,8 @@ public class DefaultMod implements
                         e.printStackTrace();
                     }
                 });
-        
+
+        settingsPanel.addUIElement(new ModLabel("Must restart game to take effect", 350.0F, 750.0F, settingsPanel, me -> {}));
         settingsPanel.addUIElement(enableIroncladRelicsButton);
         settingsPanel.addUIElement(enableSilentRelicsButton);
         settingsPanel.addUIElement(enableDefectRelicsButton);
