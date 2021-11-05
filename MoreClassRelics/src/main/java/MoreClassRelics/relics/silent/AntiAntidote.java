@@ -11,8 +11,8 @@ import static MoreClassRelics.DefaultMod.makeRelicPath;
 
 public class AntiAntidote extends CustomRelic {
     public static final String ID = DefaultMod.makeID("AntiAntidote");
-    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("ghost_pepper.png"));
-    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("ghost_pepper.png"));
+    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("anti_antidote.png"));
+    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("anti_antidote_outline.png"));
 
     public AntiAntidote() {
         super(ID, IMG, OUTLINE, RelicTier.COMMON, LandingSound.CLINK);
