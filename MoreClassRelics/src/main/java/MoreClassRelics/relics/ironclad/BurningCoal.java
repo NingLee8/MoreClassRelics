@@ -16,8 +16,8 @@ import static MoreClassRelics.DefaultMod.makeRelicPath;
 
 public class BurningCoal extends CustomRelic {
     public static final String ID = DefaultMod.makeID("BurningCoal");
-    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("ghost_pepper.png"));
-    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("ghost_pepper.png"));
+    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("burning_coal.png"));
+    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("burning_coal_outline.png"));
     private boolean triggeredThisTurn = false;
 
     public void atTurnStart() {
