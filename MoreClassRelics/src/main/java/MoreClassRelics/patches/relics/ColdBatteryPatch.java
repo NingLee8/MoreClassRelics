@@ -1,6 +1,6 @@
 package MoreClassRelics.patches.relics;
 
-import MoreClassRelics.DefaultMod;
+import MoreClassRelics.MoreClassRelicsMod;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -14,7 +14,7 @@ import com.megacrit.cardcrawl.orbs.Lightning;
 
          @SpirePrefixPatch
          public static void changeBaseAmounts(@ByRef int[] ___basePassiveAmount, @ByRef int[] ___baseEvokeAmount) {
-             if (AbstractDungeon.player.hasRelic(DefaultMod.makeID("ColdBattery"))) {
+             if (AbstractDungeon.player.hasRelic(MoreClassRelicsMod.makeID("ColdBattery"))) {
                  ___basePassiveAmount[0] = 3;
                  ___baseEvokeAmount[0] = 8;
              }
@@ -26,7 +26,7 @@ import com.megacrit.cardcrawl.orbs.Lightning;
 
          @SpirePrefixPatch
          public static void changeBaseAmounts(@ByRef int[] ___basePassiveAmount, @ByRef int[] ___baseEvokeAmount) {
-             if (AbstractDungeon.player.hasRelic(DefaultMod.makeID("ColdBattery"))) {
+             if (AbstractDungeon.player.hasRelic(MoreClassRelicsMod.makeID("ColdBattery"))) {
                  ___basePassiveAmount[0] = 2;
                  ___baseEvokeAmount[0] = 5;
              }

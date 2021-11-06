@@ -1,6 +1,6 @@
 package MoreClassRelics.relics.defect;
 
-import MoreClassRelics.DefaultMod;
+import MoreClassRelics.MoreClassRelicsMod;
 import MoreClassRelics.powers.LoseFocusPower;
 import MoreClassRelics.util.TextureLoader;
 import basemod.abstracts.CustomRelic;
@@ -13,11 +13,11 @@ import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.powers.FocusPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
-import static MoreClassRelics.DefaultMod.makeRelicOutlinePath;
-import static MoreClassRelics.DefaultMod.makeRelicPath;
+import static MoreClassRelics.MoreClassRelicsMod.makeRelicOutlinePath;
+import static MoreClassRelics.MoreClassRelicsMod.makeRelicPath;
 
 public class TuningFork extends CustomRelic {
-    public static final String ID = DefaultMod.makeID("TuningFork");
+    public static final String ID = MoreClassRelicsMod.makeID("TuningFork");
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("tuning_fork.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("tuning_fork_outline.png"));
 

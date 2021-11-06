@@ -10,7 +10,7 @@
     "NAME": "Jack-in-the-box",
     "FLAVOR": "It keeps trying to sell you burgers.",
     "DESCRIPTIONS": [
-      "Every #b3 turns, gain #b1 #ymoreclassrelics:Counter"
+      "Every #b3 turns, gain #b1 #ymoreclassrelics:Counter."
     ]
   },
   "MoreClassRelics:FoldingChair": {
@@ -38,7 +38,7 @@
     "NAME": "Windchimes",
     "FLAVOR": "Let your worries fade away in the breeze",
     "DESCRIPTIONS": [
-      "Whenever you discard a #rCurse, gain #b1 #yStrength"
+      "Whenever you discard a #rCurse during your turn, gain #b1 #yStrength."
     ]
   },
   "MoreClassRelics:CoiledNail": {
@@ -52,7 +52,7 @@
     "NAME": "Porcelain Teacup",
     "FLAVOR": "Tastes like bitter almonds.",
     "DESCRIPTIONS": [
-      "Whenever you discard a card, apply #b1 #yPoison to a random enemy"
+      "Whenever you discard a card, apply #b1 #yPoison to a random enemy."
     ]
   },
   "MoreClassRelics:BlackMirror": {
@@ -66,7 +66,7 @@
     "NAME": "Cold Battery",
     "FLAVOR": "Don't lick it.",
     "DESCRIPTIONS": [
-      "Swap the base values of #yLightning Orbs and #yFrost Orbs"
+      "Swap the base values of #yLightning Orbs and #yFrost Orbs."
     ]
   },
   "MoreClassRelics:GlassCog": {
@@ -80,7 +80,7 @@
     "NAME": "Tuning Fork",
     "FLAVOR": "A single pure note drifts through the air for a moment.",
     "DESCRIPTIONS": [
-      "Whenever you #yEvoke an Orb, gain #b1 temporary #yFocus"
+      "Whenever you #yEvoke an Orb, gain #b1 temporary #yFocus."
     ]
   },
   "MoreClassRelics:WolfsFang": {
@@ -101,7 +101,7 @@
     "NAME": "Bonsai Tree",
     "FLAVOR": "Leaves from the vine, falling so slow.",
     "DESCRIPTIONS": [
-      "Whenever you play a card created during combat, gain #b1 temporary #yStrength"
+      "Whenever you play a card created during combat, gain #b1 temporary #yStrength."
     ]
   },
   "MoreClassRelics:EmperorsAnkh": {

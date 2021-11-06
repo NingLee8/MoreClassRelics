@@ -1,6 +1,6 @@
 package MoreClassRelics.relics.silent;
 
-import MoreClassRelics.DefaultMod;
+import MoreClassRelics.MoreClassRelicsMod;
 import MoreClassRelics.patches.relicinterfaces.BetterOnDiscardRelic;
 import MoreClassRelics.util.TextureLoader;
 import basemod.abstracts.CustomRelic;
@@ -13,11 +13,11 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
-import static MoreClassRelics.DefaultMod.makeRelicOutlinePath;
-import static MoreClassRelics.DefaultMod.makeRelicPath;
+import static MoreClassRelics.MoreClassRelicsMod.makeRelicOutlinePath;
+import static MoreClassRelics.MoreClassRelicsMod.makeRelicPath;
 
 public class Windchimes extends CustomRelic implements BetterOnDiscardRelic {
-    public static final String ID = DefaultMod.makeID("Windchimes");
+    public static final String ID = MoreClassRelicsMod.makeID("Windchimes");
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("ghost_pepper.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("ghost_pepper.png"));
 

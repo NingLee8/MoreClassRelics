@@ -1,6 +1,6 @@
 package MoreClassRelics.relics.watcher;
 
-import MoreClassRelics.DefaultMod;
+import MoreClassRelics.MoreClassRelicsMod;
 import MoreClassRelics.util.TextureLoader;
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
@@ -13,11 +13,11 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
-import static MoreClassRelics.DefaultMod.makeRelicOutlinePath;
-import static MoreClassRelics.DefaultMod.makeRelicPath;
+import static MoreClassRelics.MoreClassRelicsMod.makeRelicOutlinePath;
+import static MoreClassRelics.MoreClassRelicsMod.makeRelicPath;
 
 public class FadedBookmark extends CustomRelic {
-    public static final String ID = DefaultMod.makeID("FadedBookmark");
+    public static final String ID = MoreClassRelicsMod.makeID("FadedBookmark");
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("ghost_pepper.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("ghost_pepper.png"));
 

@@ -1,6 +1,6 @@
 package MoreClassRelics.powers;
 
-import MoreClassRelics.DefaultMod;
+import MoreClassRelics.MoreClassRelicsMod;
 import basemod.interfaces.CloneablePowerInterface;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.FocusPower;
 
 public class LoseFocusPower extends AbstractPower implements CloneablePowerInterface {
-    public static final String POWER_ID = DefaultMod.makeID("LoseFocusPower");
+    public static final String POWER_ID = MoreClassRelicsMod.makeID("LoseFocusPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;

@@ -1,6 +1,6 @@
 package MoreClassRelics.relics.ironclad;
 
-import MoreClassRelics.DefaultMod;
+import MoreClassRelics.MoreClassRelicsMod;
 import MoreClassRelics.patches.relics.FoldingChairPatch;
 import MoreClassRelics.util.TextureLoader;
 import basemod.abstracts.CustomRelic;
@@ -13,11 +13,11 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
-import static MoreClassRelics.DefaultMod.makeRelicOutlinePath;
-import static MoreClassRelics.DefaultMod.makeRelicPath;
+import static MoreClassRelics.MoreClassRelicsMod.makeRelicOutlinePath;
+import static MoreClassRelics.MoreClassRelicsMod.makeRelicPath;
 
 public class FoldingChair extends CustomRelic {
-    public static final String ID = DefaultMod.makeID("FoldingChair");
+    public static final String ID = MoreClassRelicsMod.makeID("FoldingChair");
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("folding_chair.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("folding_chair_outline.png"));
 

@@ -1,6 +1,6 @@
 package MoreClassRelics.patches.relics;
 
-import MoreClassRelics.DefaultMod;
+import MoreClassRelics.MoreClassRelicsMod;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.evacipated.cardcrawl.modthespire.patcher.PatchingException;
 import com.megacrit.cardcrawl.actions.unique.PoisonLoseHpAction;
@@ -17,7 +17,7 @@ public class AntiAntidotePatch {
 
     @SpireInsertPatch(locator=Locator.class, localvars={"p"})
     public static void Insert(AbstractPower p) {
-        if (AbstractDungeon.player.hasRelic(DefaultMod.makeID("AntiAntidote"))){
+        if (AbstractDungeon.player.hasRelic(MoreClassRelicsMod.makeID("AntiAntidote"))){
            p.amount++;
         }
     }

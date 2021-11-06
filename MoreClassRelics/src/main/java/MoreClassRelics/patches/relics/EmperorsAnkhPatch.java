@@ -1,6 +1,6 @@
 package MoreClassRelics.patches.relics;
 
-import MoreClassRelics.DefaultMod;
+import MoreClassRelics.MoreClassRelicsMod;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.evacipated.cardcrawl.modthespire.patcher.PatchingException;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -22,7 +22,7 @@ public class EmperorsAnkhPatch {
             locator = Locator.class
     )
     public static void Insert() {
-        if (AbstractDungeon.player.hasRelic(DefaultMod.makeID("EmperorsAnkh"))){
+        if (AbstractDungeon.player.hasRelic(MoreClassRelicsMod.makeID("EmperorsAnkh"))){
             int mantra = AbstractDungeon.gridSelectScreen.selectedCards.size();
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new MantraPower(AbstractDungeon.player, mantra), mantra));
         }
