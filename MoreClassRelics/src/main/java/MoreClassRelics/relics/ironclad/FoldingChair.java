@@ -18,8 +18,8 @@ import static MoreClassRelics.DefaultMod.makeRelicPath;
 
 public class FoldingChair extends CustomRelic {
     public static final String ID = DefaultMod.makeID("FoldingChair");
-    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("ghost_pepper.png"));
-    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("ghost_pepper.png"));
+    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("folding_chair.png"));
+    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("folding_chair_outline.png"));
 
     public FoldingChair() {
         super(ID, IMG, OUTLINE, RelicTier.RARE, LandingSound.HEAVY);
