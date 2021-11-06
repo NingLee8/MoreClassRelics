@@ -8,9 +8,9 @@
   },
   "MoreClassRelics:JackInTheBox": {
     "NAME": "Jack-in-the-box",
-    "FLAVOR": "I was hoping for a burger.",
+    "FLAVOR": "It keeps trying to sell you burgers.",
     "DESCRIPTIONS": [
-      "The first time you take damage each round, deal that much to ALL enemies."
+      "Every #b3 turns, gain #b1 #ymoreclassrelics:Counter"
     ]
   },
   "MoreClassRelics:FoldingChair": {
@@ -24,7 +24,7 @@
     "NAME": "Burning Coal",
     "FLAVOR": "Keeps the engine going",
     "DESCRIPTIONS": [
-      "The first time you #yExhaust a card each turn, gain [E]."
+      "The first time you #yExhaust a card each turn, gain [E] ."
     ]
   },
   "MoreClassRelics:AntiAntidote": {
@@ -87,7 +87,7 @@
     "NAME": "Wolf's Fang",
     "FLAVOR": "It resonates with an insatiable hunger.",
     "DESCRIPTIONS": [
-      "If you start your turn in #yWrath stance, draw an additional card."
+      "If you start your turn in #yWrath, draw an additional card."
     ]
   },
   "MoreClassRelics:FadedBookmark": {

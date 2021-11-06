@@ -4,5 +4,12 @@
     "DESCRIPTIONS": [
       "At the end of your turn, lose #b", " Focus"
     ]
+  },
+  "MoreClassRelics:CounterPower": {
+    "NAME": "Counter",
+    "DESCRIPTIONS": [
+      "The next time you take damage, deal that much to ALL enemies.",
+      "The next #b", " times you take damage, deal that much to ALL enemies."
+    ]
   }
 }
