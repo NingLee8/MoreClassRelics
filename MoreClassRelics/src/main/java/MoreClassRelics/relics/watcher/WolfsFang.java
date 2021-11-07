@@ -15,8 +15,8 @@ import static MoreClassRelics.MoreClassRelicsMod.makeRelicPath;
 
 public class WolfsFang extends CustomRelic {
     public static final String ID = MoreClassRelicsMod.makeID("WolfsFang");
-    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("ghost_pepper.png"));
-    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("ghost_pepper.png"));
+    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("wolfs_fang.png"));
+    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("wolfs_fang_outline.png"));
 
     public WolfsFang() {
         super(ID, IMG, OUTLINE, RelicTier.UNCOMMON, LandingSound.FLAT);
