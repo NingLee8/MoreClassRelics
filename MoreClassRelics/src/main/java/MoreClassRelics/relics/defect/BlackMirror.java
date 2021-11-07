@@ -14,8 +14,8 @@ import static MoreClassRelics.MoreClassRelicsMod.makeRelicPath;
 
 public class BlackMirror extends CustomRelic {
     public static final String ID = MoreClassRelicsMod.makeID("BlackMirror");
-    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("ghost_pepper.png"));
-    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("ghost_pepper.png"));
+    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("black_mirror.png"));
+    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("black_mirror_outline.png"));
 
     public BlackMirror() {
         super(ID, IMG, OUTLINE, RelicTier.UNCOMMON, LandingSound.SOLID);
