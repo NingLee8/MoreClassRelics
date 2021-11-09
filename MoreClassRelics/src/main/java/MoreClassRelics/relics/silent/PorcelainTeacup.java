@@ -18,8 +18,8 @@ import static MoreClassRelics.MoreClassRelicsMod.makeRelicPath;
 
 public class PorcelainTeacup extends CustomRelic {
     public static final String ID = MoreClassRelicsMod.makeID("PorcelainTeacup");
-    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("ghost_pepper.png"));
-    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("ghost_pepper.png"));
+    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("porcelain_teacup.png"));
+    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("porcelain_teacup_outline.png"));
 
 
     public PorcelainTeacup() {

@@ -11,8 +11,8 @@ import static MoreClassRelics.MoreClassRelicsMod.makeRelicPath;
 
 public class EmperorsAnkh extends CustomRelic {
     public static final String ID = MoreClassRelicsMod.makeID("EmperorsAnkh");
-    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("ghost_pepper.png"));
-    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("ghost_pepper.png"));
+    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("emperors_ankh.png"));
+    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("emperors_ankh_outline.png"));
 
     public EmperorsAnkh() {
         super(ID, IMG, OUTLINE, RelicTier.BOSS, LandingSound.MAGICAL);
