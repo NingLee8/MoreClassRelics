@@ -17,8 +17,8 @@ import static MoreClassRelics.MoreClassRelicsMod.makeRelicPath;
 
 public class GlassCog extends CustomRelic {
     public static final String ID = MoreClassRelicsMod.makeID("GlassCog");
-    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("ghost_pepper.png"));
-    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("ghost_pepper.png"));
+    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("glass_cog.png"));
+    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("glass_cog_outline.png"));
 
     public GlassCog() {
         super(ID, IMG, OUTLINE, RelicTier.UNCOMMON, LandingSound.CLINK);
