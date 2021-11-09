@@ -11,8 +11,8 @@ import static MoreClassRelics.MoreClassRelicsMod.makeRelicPath;
 
 public class CoiledNail extends CustomRelic {
     public static final String ID = MoreClassRelicsMod.makeID("CoiledNail");
-    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("ghost_pepper.png"));
-    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("ghost_pepper.png"));
+    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("coiled_nail.png"));
+    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("coiled_nail_outline.png"));
 
     public CoiledNail() {
         super(ID, IMG, OUTLINE, RelicTier.RARE, LandingSound.SOLID);
