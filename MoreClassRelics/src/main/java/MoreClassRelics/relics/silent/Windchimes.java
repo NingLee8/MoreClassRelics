@@ -18,8 +18,8 @@ import static MoreClassRelics.MoreClassRelicsMod.makeRelicPath;
 
 public class Windchimes extends CustomRelic implements BetterOnDiscardRelic {
     public static final String ID = MoreClassRelicsMod.makeID("Windchimes");
-    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("ghost_pepper.png"));
-    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("ghost_pepper.png"));
+    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("windchimes.png"));
+    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("windchimes_outline.png"));
 
     public Windchimes() {
         super(ID, IMG, OUTLINE, RelicTier.UNCOMMON, LandingSound.MAGICAL);
