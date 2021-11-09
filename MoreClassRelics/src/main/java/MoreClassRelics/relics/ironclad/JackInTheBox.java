@@ -19,8 +19,8 @@ import static MoreClassRelics.MoreClassRelicsMod.makeRelicPath;
 
 public class JackInTheBox extends CustomRelic {
     public static final String ID = MoreClassRelicsMod.makeID("JackInTheBox");
-    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("ghost_pepper.png"));
-    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("ghost_pepper.png"));
+    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("jack_in_the_box.png"));
+    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("jack_in_the_box_outline.png"));
     private boolean triggeredThisTurn = false;
 
     private static final List<String> SFX = Arrays.asList("3A", "3B", "3C", "MA", "MB", "MC");
