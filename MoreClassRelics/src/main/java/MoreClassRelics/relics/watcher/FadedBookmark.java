@@ -18,8 +18,8 @@ import static MoreClassRelics.MoreClassRelicsMod.makeRelicPath;
 
 public class FadedBookmark extends CustomRelic {
     public static final String ID = MoreClassRelicsMod.makeID("FadedBookmark");
-    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("ghost_pepper.png"));
-    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("ghost_pepper.png"));
+    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("faded_bookmark.png"));
+    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("faded_bookmark_outline.png"));
 
     private int damageCounter = 0;
 
