@@ -20,9 +20,9 @@
       "Whenever you deal unblocked damage to a non-minion enemy for at least 50% of their max HP, heal #b3 HP."
     ]
   },
-  "MoreClassRelics:BurningCoal": {
-    "NAME": "Burning Coal",
-    "FLAVOR": "Keeps the engine going",
+  "MoreClassRelics:Emberfly": {
+    "NAME": "Emberfly",
+    "FLAVOR": "It nibbles at puffs of smoke that linger in the air.",
     "DESCRIPTIONS": [
       "The first time you #yExhaust a card each turn, gain [E] ."
     ]

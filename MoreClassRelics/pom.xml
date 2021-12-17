@@ -6,7 +6,7 @@
     <groupId>moreclassrelics</groupId>
     <artifactId>MoreClassRelics</artifactId> <!--Keep a note of this one: this is the ID used in the "auto add cards" method-->
     <name>More Class Relics</name>
-    <version>0.0.1</version>
+    <version>0.1.1</version>
     <description>Mix of new class specific relics</description>
 
     <properties>

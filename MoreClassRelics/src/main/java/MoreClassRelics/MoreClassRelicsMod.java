@@ -4,7 +4,7 @@ import MoreClassRelics.relics.defect.BlackMirror;
 import MoreClassRelics.relics.defect.ColdBattery;
 import MoreClassRelics.relics.defect.GlassCog;
 import MoreClassRelics.relics.defect.TuningFork;
-import MoreClassRelics.relics.ironclad.BurningCoal;
+import MoreClassRelics.relics.ironclad.Emberfly;
 import MoreClassRelics.relics.ironclad.FoldingChair;
 import MoreClassRelics.relics.ironclad.GhostPepper;
 import MoreClassRelics.relics.ironclad.JackInTheBox;
@@ -249,7 +249,7 @@ public class MoreClassRelicsMod implements
             BaseMod.addRelic(new GhostPepper(), RelicType.RED);
             BaseMod.addRelic(new JackInTheBox(), RelicType.RED);
             BaseMod.addRelic(new FoldingChair(), RelicType.RED);
-            BaseMod.addRelic(new BurningCoal(), RelicType.RED);
+            BaseMod.addRelic(new Emberfly(), RelicType.RED);
         }
 
         if (enableSilentRelics) {

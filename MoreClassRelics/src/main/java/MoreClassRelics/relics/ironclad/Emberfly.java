@@ -14,18 +14,18 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 import static MoreClassRelics.MoreClassRelicsMod.makeRelicOutlinePath;
 import static MoreClassRelics.MoreClassRelicsMod.makeRelicPath;
 
-public class BurningCoal extends CustomRelic {
-    public static final String ID = MoreClassRelicsMod.makeID("BurningCoal");
-    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("burning_coal.png"));
-    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("burning_coal_outline.png"));
+public class Emberfly extends CustomRelic {
+    public static final String ID = MoreClassRelicsMod.makeID("Emberfly");
+    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("emberfly.png"));
+    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("emberfly_outline.png"));
     private boolean triggeredThisTurn = false;
 
     public void atTurnStart() {
         this.triggeredThisTurn = false;
     }
 
-    public BurningCoal() {
-        super(ID, IMG, OUTLINE, RelicTier.BOSS, LandingSound.HEAVY);
+    public Emberfly() {
+        super(ID, IMG, OUTLINE, RelicTier.BOSS, LandingSound.MAGICAL);
     }
 
     public void onExhaust(AbstractCard card) {
@@ -44,6 +44,6 @@ public class BurningCoal extends CustomRelic {
 
     @Override
     public AbstractRelic makeCopy() {
-        return new BurningCoal();
+        return new Emberfly();
     }
 }
