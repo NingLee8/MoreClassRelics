@@ -7,7 +7,6 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 
 @SpirePatch2(clz= AbstractCreature.class, method= SpirePatch.CLASS)
 public class FoldingChairPatch {
-    public static SpireField<Integer> currentHealthBeforeAttacked = new SpireField<Integer>(() -> 0);
     public static SpireField<Boolean> triggeredFoldingChair = new SpireField<Boolean>(() -> false);
 }
 

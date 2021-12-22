@@ -12,6 +12,8 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.vfx.RainingGoldEffect;
+import com.megacrit.cardcrawl.vfx.SpotlightPlayerEffect;
 
 import static MoreClassRelics.MoreClassRelicsMod.makeRelicOutlinePath;
 import static MoreClassRelics.MoreClassRelicsMod.makeRelicPath;
@@ -21,31 +23,37 @@ public class FoldingChair extends CustomRelic {
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("folding_chair.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("folding_chair_outline.png"));
 
+    private boolean shouldTriggerSpotlight = true;
+
     public FoldingChair() {
         super(ID, IMG, OUTLINE, RelicTier.RARE, LandingSound.HEAVY);
     }
 
     public void onPlayCard(AbstractCard c, AbstractMonster m) {
-        for (AbstractMonster monster : AbstractDungeon.getMonsters().monsters) {
-            FoldingChairPatch.currentHealthBeforeAttacked.set(monster, monster.currentHealth);
-            FoldingChairPatch.triggeredFoldingChair.set(monster, false);
-        }
+        shouldTriggerSpotlight = true;
     }
 
     public void onAttack(DamageInfo info, int damageAmount, AbstractCreature target) {
+        boolean isFatal = target.currentHealth <= damageAmount;
+        boolean isNormalDamage = DamageInfo.DamageType.NORMAL.equals(info.type);
+        if (info.owner != null && isNormalDamage && isFatal) {
+            FoldingChairPatch.triggeredFoldingChair.set(target, true);
+        }
+    }
 
-        if (!FoldingChairPatch.triggeredFoldingChair.get(target)) {
-            Integer previousHealth = FoldingChairPatch.currentHealthBeforeAttacked.get(target);
-            Integer newHealth = target.currentHealth - damageAmount;
-            int totalDamageTaken = previousHealth - newHealth;
+    public void onMonsterDeath(AbstractMonster m) {
+        if (FoldingChairPatch.triggeredFoldingChair.get(m)) {
+            if ((m.isDying || m.currentHealth <= 0) && !m.halfDead && !m.hasPower("Minion")) {
+                if (m.hasPower("Vulnerable")) {
+                    this.addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));
+                    AbstractDungeon.effectList.add(new RainingGoldEffect(8 * 2, true));
+                    AbstractDungeon.player.gainGold(8);
 
-            boolean damageThresholdMet = (float)totalDamageTaken >= (float)target.maxHealth / 2.0F;
-            boolean isNotMinion = !target.hasPower("Minion");
-            boolean isNormalDamage = DamageInfo.DamageType.NORMAL.equals(info.type);
-            if (info.owner != null && isNormalDamage && isNotMinion && damageThresholdMet) {
-                this.addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));
-                this.addToTop(new HealAction(AbstractDungeon.player, AbstractDungeon.player, 3, 0.0F));
-                FoldingChairPatch.triggeredFoldingChair.set(target, true);
+                    if (shouldTriggerSpotlight) {
+                        AbstractDungeon.effectsQueue.add(new SpotlightPlayerEffect());
+                        shouldTriggerSpotlight = false;
+                    }
+                }
             }
         }
     }

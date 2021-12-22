@@ -17,7 +17,7 @@
     "NAME": "Folding Chair",
     "FLAVOR": "IRONCLAD WITH THE FOLDING CHAIR!",
     "DESCRIPTIONS": [
-      "Whenever you deal unblocked damage to a non-minion enemy for at least 50% of their max HP, heal #b3 HP."
+      "When an #yAttack on a #yVulnerable enemy is #yFatal, gain #b8 #yGold."
     ]
   },
   "MoreClassRelics:Emberfly": {
