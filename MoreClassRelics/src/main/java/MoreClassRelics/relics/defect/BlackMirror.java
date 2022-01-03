@@ -18,7 +18,7 @@ public class BlackMirror extends CustomRelic {
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("black_mirror_outline.png"));
 
     public BlackMirror() {
-        super(ID, IMG, OUTLINE, RelicTier.UNCOMMON, LandingSound.SOLID);
+        super(ID, IMG, OUTLINE, RelicTier.UNCOMMON, LandingSound.HEAVY);
     }
 
     public void onEvokeOrb(AbstractOrb ammo) {

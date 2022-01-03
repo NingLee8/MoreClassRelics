@@ -26,7 +26,7 @@ public class FoldingChair extends CustomRelic {
     private boolean shouldTriggerSpotlight = true;
 
     public FoldingChair() {
-        super(ID, IMG, OUTLINE, RelicTier.RARE, LandingSound.HEAVY);
+        super(ID, IMG, OUTLINE, RelicTier.UNCOMMON, LandingSound.HEAVY);
     }
 
     public void onPlayCard(AbstractCard c, AbstractMonster m) {
