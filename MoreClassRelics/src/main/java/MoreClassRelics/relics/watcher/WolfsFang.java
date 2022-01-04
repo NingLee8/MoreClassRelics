@@ -5,6 +5,7 @@ import MoreClassRelics.util.TextureLoader;
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -18,6 +19,8 @@ public class WolfsFang extends CustomRelic {
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("wolfs_fang.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("wolfs_fang_outline.png"));
 
+    private boolean shouldTrigger = false;
+
     public WolfsFang() {
         super(ID, IMG, OUTLINE, RelicTier.UNCOMMON, LandingSound.FLAT);
     }
@@ -27,9 +30,15 @@ public class WolfsFang extends CustomRelic {
         return this.DESCRIPTIONS[0];
     }
 
+    // Check before Simmering Fury is activated
+    public void atTurnStart() {
+        shouldTrigger = AbstractDungeon.player.stance.ID.equals("Wrath");
+    }
+
     public void atTurnStartPostDraw() {
-        if (AbstractDungeon.player.stance.ID.equals("Wrath")) {
+        if (shouldTrigger) {
             this.addToBot(new DrawCardAction(AbstractDungeon.player, 1));
+            this.addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
         }
     }
 

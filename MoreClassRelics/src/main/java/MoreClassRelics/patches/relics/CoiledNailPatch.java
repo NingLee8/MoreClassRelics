@@ -1,9 +1,12 @@
 package MoreClassRelics.patches.relics;
 
 import MoreClassRelics.MoreClassRelicsMod;
+import MoreClassRelics.relics.silent.CoiledNail;
+import MoreClassRelics.relics.watcher.EmperorsAnkh;
 import com.evacipated.cardcrawl.modthespire.lib.ByRef;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch2;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
+import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
@@ -17,6 +20,7 @@ public class CoiledNailPatch {
         if (AbstractDungeon.player.hasRelic(MoreClassRelicsMod.makeID("CoiledNail"))) {
             if ("Shiv".equals(___c.cardID)) {
                 ___amount[0]++;
+                AbstractDungeon.actionManager.addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, new CoiledNail()));
             }
         }
     }

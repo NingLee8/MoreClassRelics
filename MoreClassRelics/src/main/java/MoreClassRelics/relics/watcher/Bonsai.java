@@ -6,7 +6,9 @@ import MoreClassRelics.util.TextureLoader;
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.LoseStrengthPower;
@@ -27,8 +29,10 @@ public class Bonsai extends CustomRelic {
 
     public void onPlayCard(AbstractCard c, AbstractMonster m) {
         if (CreatedDuringCombatPatch.createdDuringCombat.get(c)) {
-            this.addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, 1), 1));
-            this.addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new LoseStrengthPower(AbstractDungeon.player, 1), 1));
+            AbstractPlayer p = AbstractDungeon.player;
+            this.addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, 1), 1));
+            this.addToBot(new ApplyPowerAction(p, p, new LoseStrengthPower(p, 1), 1));
+            this.addToBot(new RelicAboveCreatureAction(p, this));
         }
     }
 

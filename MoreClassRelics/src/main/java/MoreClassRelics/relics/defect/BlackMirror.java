@@ -4,6 +4,7 @@ import MoreClassRelics.MoreClassRelicsMod;
 import MoreClassRelics.util.TextureLoader;
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
+import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.actions.defect.DarkImpulseAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
@@ -23,6 +24,7 @@ public class BlackMirror extends CustomRelic {
 
     public void onEvokeOrb(AbstractOrb ammo) {
         if ("Dark".equals(ammo.ID)) {
+            this.addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
             AbstractDungeon.actionManager.addToTop(new DarkImpulseAction());
         }
     }

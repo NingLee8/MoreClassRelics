@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
@@ -20,6 +21,8 @@ public class Windchimes extends CustomRelic implements BetterOnDiscardRelic {
     public static final String ID = MoreClassRelicsMod.makeID("Windchimes");
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("windchimes.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("windchimes_outline.png"));
+
+    private boolean shouldTriggerSoundEffect = true;
 
     public Windchimes() {
         super(ID, IMG, OUTLINE, RelicTier.UNCOMMON, LandingSound.MAGICAL);
@@ -35,12 +38,19 @@ public class Windchimes extends CustomRelic implements BetterOnDiscardRelic {
         return new Windchimes();
     }
 
+    public void onPlayCard(AbstractCard c, AbstractMonster m) {
+        shouldTriggerSoundEffect = true;
+    }
+
     @Override
     public void betterOnDiscardRelic(AbstractCard card) {
         if (AbstractCard.CardType.CURSE.equals(card.type)) {
-            this.flash();
-            CardCrawlGame.sound.play("RELIC_DROP_MAGICAL");
-            this.addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
+            if (shouldTriggerSoundEffect) {
+                this.flash();
+                this.addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));
+                CardCrawlGame.sound.play("RELIC_DROP_MAGICAL");
+                shouldTriggerSoundEffect = false;
+            }
             this.addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, 1), 1));
         }
     }

@@ -45,11 +45,11 @@ public class FoldingChair extends CustomRelic {
         if (FoldingChairPatch.triggeredFoldingChair.get(m)) {
             if ((m.isDying || m.currentHealth <= 0) && !m.halfDead && !m.hasPower("Minion")) {
                 if (m.hasPower("Vulnerable")) {
-                    this.addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));
                     AbstractDungeon.effectList.add(new RainingGoldEffect(8 * 2, true));
                     AbstractDungeon.player.gainGold(8);
 
                     if (shouldTriggerSpotlight) {
+                        this.addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));
                         AbstractDungeon.effectsQueue.add(new SpotlightPlayerEffect());
                         shouldTriggerSpotlight = false;
                     }

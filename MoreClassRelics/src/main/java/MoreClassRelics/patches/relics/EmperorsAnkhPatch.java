@@ -1,9 +1,11 @@
 package MoreClassRelics.patches.relics;
 
 import MoreClassRelics.MoreClassRelicsMod;
+import MoreClassRelics.relics.watcher.EmperorsAnkh;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.evacipated.cardcrawl.modthespire.patcher.PatchingException;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.actions.utility.ScryAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.watcher.MantraPower;
@@ -25,6 +27,7 @@ public class EmperorsAnkhPatch {
         if (AbstractDungeon.player.hasRelic(MoreClassRelicsMod.makeID("EmperorsAnkh"))){
             int mantra = AbstractDungeon.gridSelectScreen.selectedCards.size();
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new MantraPower(AbstractDungeon.player, mantra), mantra));
+            AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, new EmperorsAnkh()));
         }
     }
 
