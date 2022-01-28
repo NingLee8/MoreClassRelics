@@ -17,7 +17,7 @@
     "NAME": "Folding Chair",
     "FLAVOR": "IRONCLAD WITH THE FOLDING CHAIR!",
     "DESCRIPTIONS": [
-      "When an #yAttack on a #yVulnerable enemy is #yFatal, gain #b8 #yGold."
+      "When an #yAttack on a #yVulnerable enemy is #yFatal, gain #b12 #yGold."
     ]
   },
   "MoreClassRelics:Emberfly": {
@@ -52,7 +52,7 @@
     "NAME": "Porcelain Teacup",
     "FLAVOR": "Tastes like bitter almonds.",
     "DESCRIPTIONS": [
-      "Whenever you discard a card, apply #b1 #yPoison to a random enemy."
+      "Whenever you discard a #b0 cost card, apply #b1 #yPoison to ALL enemies."
     ]
   },
   "MoreClassRelics:BlackMirror": {
@@ -73,7 +73,7 @@
     "NAME": "Glass Cog",
     "FLAVOR": "Does this do anything?",
     "DESCRIPTIONS": [
-      "If you start your turn with no #yChanneled Orbs, draw #b2 cards."
+      "If you start your turn with no #yChanneled Orbs, draw #b1 additional card."
     ]
   },
   "MoreClassRelics:TuningFork": {
@@ -87,7 +87,7 @@
     "NAME": "Wolf's Fang",
     "FLAVOR": "It resonates with an insatiable hunger.",
     "DESCRIPTIONS": [
-      "If you start your turn in #yWrath, draw an additional card."
+      "If you end your turn in #yWrath, your next #yAttack deals #b2 additional damage."
     ]
   },
   "MoreClassRelics:FadedBookmark": {

@@ -30,9 +30,9 @@ public class Bonsai extends CustomRelic {
     public void onPlayCard(AbstractCard c, AbstractMonster m) {
         if (CreatedDuringCombatPatch.createdDuringCombat.get(c)) {
             AbstractPlayer p = AbstractDungeon.player;
+            this.addToBot(new RelicAboveCreatureAction(p, this));
             this.addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, 1), 1));
             this.addToBot(new ApplyPowerAction(p, p, new LoseStrengthPower(p, 1), 1));
-            this.addToBot(new RelicAboveCreatureAction(p, this));
         }
     }
 

@@ -1,6 +1,7 @@
 package MoreClassRelics.relics.silent;
 
 import MoreClassRelics.MoreClassRelicsMod;
+import MoreClassRelics.patches.relicinterfaces.BetterOnDiscardRelic;
 import MoreClassRelics.util.TextureLoader;
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
@@ -17,7 +18,7 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 import static MoreClassRelics.MoreClassRelicsMod.makeRelicOutlinePath;
 import static MoreClassRelics.MoreClassRelicsMod.makeRelicPath;
 
-public class PorcelainTeacup extends CustomRelic {
+public class PorcelainTeacup extends CustomRelic implements BetterOnDiscardRelic {
     public static final String ID = MoreClassRelicsMod.makeID("PorcelainTeacup");
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("porcelain_teacup.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("porcelain_teacup_outline.png"));
@@ -25,21 +26,26 @@ public class PorcelainTeacup extends CustomRelic {
     private boolean shouldTriggerVFX = true;
 
     public PorcelainTeacup() {
-        super(ID, IMG, OUTLINE, RelicTier.RARE, LandingSound.CLINK);
+        super(ID, IMG, OUTLINE, RelicTier.UNCOMMON, LandingSound.CLINK);
     }
 
     public void onPlayCard(AbstractCard c, AbstractMonster m) {
         shouldTriggerVFX = true;
     }
 
-    public void onManualDiscard() {
-        AbstractMonster randomMonster = AbstractDungeon.getMonsters().getRandomMonster((AbstractMonster)null, true, AbstractDungeon.cardRandomRng);
-        if (!randomMonster.isDead && !randomMonster.isDying) {
-            this.addToBot(new ApplyPowerAction(randomMonster, AbstractDungeon.player, new PoisonPower(randomMonster, AbstractDungeon.player, 1), 1));
-            if (shouldTriggerVFX) {
-                this.flash();
-                this.addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));
-                shouldTriggerVFX = false;
+
+    @Override
+    public void betterOnDiscardRelic(AbstractCard card, int total) {
+        if (card.cost == 0) {
+            for(AbstractMonster monster : AbstractDungeon.getMonsters().monsters) {
+                if (!monster.isDead && !monster.isDying) {
+                    this.addToBot(new ApplyPowerAction(monster, AbstractDungeon.player, new PoisonPower(monster, AbstractDungeon.player, 1), 1));
+                    if (shouldTriggerVFX) {
+                        this.flash();
+                        this.addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));
+                        shouldTriggerVFX = false;
+                    }
+                }
             }
         }
     }

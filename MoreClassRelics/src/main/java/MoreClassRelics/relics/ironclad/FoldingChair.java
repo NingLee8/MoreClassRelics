@@ -26,7 +26,7 @@ public class FoldingChair extends CustomRelic {
     private boolean shouldTriggerSpotlight = true;
 
     public FoldingChair() {
-        super(ID, IMG, OUTLINE, RelicTier.UNCOMMON, LandingSound.HEAVY);
+        super(ID, IMG, OUTLINE, RelicTier.RARE, LandingSound.HEAVY);
     }
 
     public void onPlayCard(AbstractCard c, AbstractMonster m) {
@@ -45,8 +45,8 @@ public class FoldingChair extends CustomRelic {
         if (FoldingChairPatch.triggeredFoldingChair.get(m)) {
             if ((m.isDying || m.currentHealth <= 0) && !m.halfDead && !m.hasPower("Minion")) {
                 if (m.hasPower("Vulnerable")) {
-                    AbstractDungeon.effectList.add(new RainingGoldEffect(8 * 2, true));
-                    AbstractDungeon.player.gainGold(8);
+                    AbstractDungeon.effectList.add(new RainingGoldEffect(12 * 2, true));
+                    AbstractDungeon.player.gainGold(12);
 
                     if (shouldTriggerSpotlight) {
                         this.addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));

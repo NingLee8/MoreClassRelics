@@ -22,10 +22,12 @@ public class Windchimes extends CustomRelic implements BetterOnDiscardRelic {
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("windchimes.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("windchimes_outline.png"));
 
-    private boolean shouldTriggerSoundEffect = true;
+    private boolean triggerEffects = true;
+    private int triggerCounter = 0;
+    private int cardCounter = 0;
 
     public Windchimes() {
-        super(ID, IMG, OUTLINE, RelicTier.UNCOMMON, LandingSound.MAGICAL);
+        super(ID, IMG, OUTLINE, RelicTier.RARE, LandingSound.MAGICAL);
     }
 
     @Override
@@ -39,19 +41,38 @@ public class Windchimes extends CustomRelic implements BetterOnDiscardRelic {
     }
 
     public void onPlayCard(AbstractCard c, AbstractMonster m) {
-        shouldTriggerSoundEffect = true;
+        triggerEffects = true;
+        triggerCounter = 0;
+        cardCounter = 0;
+    }
+
+    public void onUsePotion() {
+        triggerEffects = true;
+        triggerCounter = 0;
+        cardCounter = 0;
     }
 
     @Override
-    public void betterOnDiscardRelic(AbstractCard card) {
+    public void betterOnDiscardRelic(AbstractCard card, int total) {
+        boolean triggerOnThisCard = false;
+        cardCounter++;
         if (AbstractCard.CardType.CURSE.equals(card.type)) {
-            if (shouldTriggerSoundEffect) {
+            triggerCounter++;
+            triggerOnThisCard = true;
+        }
+        if (cardCounter >= total && triggerCounter > 0) {
+            if (triggerEffects) {
                 this.flash();
                 this.addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));
                 CardCrawlGame.sound.play("RELIC_DROP_MAGICAL");
-                shouldTriggerSoundEffect = false;
+                triggerEffects = false;
             }
-            this.addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, 1), 1));
+            if (cardCounter > total && triggerOnThisCard) {
+                this.addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, 1), 1));
+            } else if (cardCounter == total){
+                this.addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, triggerCounter), triggerCounter));
+            }
+
         }
     }
 }
