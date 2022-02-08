@@ -52,7 +52,7 @@
     "NAME": "Porcelain Teacup",
     "FLAVOR": "Tastes like bitter almonds.",
     "DESCRIPTIONS": [
-      "Whenever you discard a #b0 cost card, apply #b1 #yPoison to ALL enemies."
+      "Whenever you apply #yWeak, apply #b3 #yPoison."
     ]
   },
   "MoreClassRelics:BlackMirror": {
@@ -94,7 +94,7 @@
     "NAME": "Faded Bookmark",
     "FLAVOR": "It's okay if you don't remember where you left off.",
     "DESCRIPTIONS": [
-      "At the end of your turn, deal damage to ALL enemies equal to the number of cards you #yRetain."
+      "At the end of your turn, deal #b2 damage to a random enemy for each card you #yRetain."
     ]
   },
   "MoreClassRelics:Bonsai": {
