@@ -1,7 +1,7 @@
 package MoreClassRelics.relics.ironclad;
 
 import MoreClassRelics.MoreClassRelicsMod;
-import MoreClassRelics.powers.CounterPower;
+import MoreClassRelics.powers.RevengePower;
 import MoreClassRelics.util.TextureLoader;
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
@@ -45,7 +45,7 @@ public class JackInTheBox extends CustomRelic {
             this.counter = 0;
             this.flash();
             this.addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
-            this.addToBot(new ApplyPowerAction(p, p, new CounterPower(p, 1), 1));
+            this.addToBot(new ApplyPowerAction(p, p, new RevengePower(p, 1), 1));
         }
 
     }

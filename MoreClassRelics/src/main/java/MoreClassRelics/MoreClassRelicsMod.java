@@ -1,5 +1,6 @@
 package MoreClassRelics;
 
+import MoreClassRelics.powers.RevengePower;
 import MoreClassRelics.relics.defect.BlackMirror;
 import MoreClassRelics.relics.defect.ColdBattery;
 import MoreClassRelics.relics.defect.GlassCog;
@@ -44,7 +45,7 @@ public class MoreClassRelicsMod implements
         EditRelicsSubscriber,
         EditStringsSubscriber,
         EditKeywordsSubscriber,
-        PostInitializeSubscriber {
+        PostInitializeSubscriber{
     // Make sure to implement the subscribers *you* are using (read basemod wiki). Editing cards? EditCardsSubscriber.
     // Making relics? EditRelicsSubscriber. etc., etc., for a full list and how to make your own, visit the basemod wiki.
     public static final Logger logger = LogManager.getLogger(MoreClassRelicsMod.class.getName());
@@ -275,7 +276,6 @@ public class MoreClassRelicsMod implements
 
         logger.info("Done adding relics!");
     }
-
     
     @Override
     public void receiveEditStrings() {
@@ -303,6 +303,9 @@ public class MoreClassRelicsMod implements
                 BaseMod.addKeyword(getModID().toLowerCase(), keyword.PROPER_NAME, keyword.NAMES, keyword.DESCRIPTION);
             }
         }
+
+        // idk where to put this
+        BaseMod.addPower(RevengePower.class, MoreClassRelicsMod.makeID("RevengePower"));
     }
 
     public static String makeID(String idText) {

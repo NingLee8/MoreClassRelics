@@ -17,14 +17,14 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import java.util.Arrays;
 import java.util.List;
 
-public class CounterPower extends AbstractPower implements CloneablePowerInterface {
-    public static final String POWER_ID = MoreClassRelicsMod.makeID("CounterPower");
+public class RevengePower extends AbstractPower implements CloneablePowerInterface {
+    public static final String POWER_ID = MoreClassRelicsMod.makeID("RevengePower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
     private static final List<String> SFX = Arrays.asList("3A", "3B", "3C", "MA", "MB", "MC");
 
-    public CounterPower(AbstractCreature owner, int amount) {
+    public RevengePower(AbstractCreature owner, int amount) {
         this.ID = POWER_ID;
         this.name = NAME;
         this.amount = amount;
@@ -47,8 +47,9 @@ public class CounterPower extends AbstractPower implements CloneablePowerInterfa
             int roll = MathUtils.random(5);
             CardCrawlGame.sound.play("VO_MERCHANT_" + SFX.get(roll));
             this.flash();
-            this.addToTop(new DamageAllEnemiesAction((AbstractCreature)null, DamageInfo.createDamageMatrix(damageAmount, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-            this.addToTop(new ReducePowerAction(this.owner, this.owner, this.ID, 1));
+            int returnDamage = damageAmount * this.amount;
+            this.addToTop(new DamageAllEnemiesAction((AbstractCreature)null, DamageInfo.createDamageMatrix(returnDamage, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+            this.addToTop(new ReducePowerAction(this.owner, this.owner, this.ID, this.amount));
         }
 
         return damageAmount;
@@ -64,6 +65,6 @@ public class CounterPower extends AbstractPower implements CloneablePowerInterfa
 
     @Override
     public AbstractPower makeCopy() {
-        return new CounterPower(this.owner, this.amount);
+        return new RevengePower(this.owner, this.amount);
     }
 }

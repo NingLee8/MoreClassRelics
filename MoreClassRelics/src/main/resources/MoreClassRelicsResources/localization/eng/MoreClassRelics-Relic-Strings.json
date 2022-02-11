@@ -10,7 +10,7 @@
     "NAME": "Jack-in-the-box",
     "FLAVOR": "It keeps trying to sell you burgers.",
     "DESCRIPTIONS": [
-      "Every #b3 turns, gain #b1 #ymoreclassrelics:Counter."
+      "Every #b3 turns, gain #b1 #ymoreclassrelics:Revenge."
     ]
   },
   "MoreClassRelics:FoldingChair": {

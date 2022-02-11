@@ -1,8 +1,8 @@
 [
   {
     "NAMES": [
-      "counter"
+      "revenge"
     ],
-    "DESCRIPTION": "The next time you take damage, deal that much damage to ALL enemies"
+    "DESCRIPTION": "The next time you take damage, return that much back to ALL enemies"
   }
 ]

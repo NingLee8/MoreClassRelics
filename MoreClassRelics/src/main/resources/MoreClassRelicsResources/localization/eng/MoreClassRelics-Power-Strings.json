@@ -5,11 +5,11 @@
       "At the end of your turn, lose #b", " Focus"
     ]
   },
-  "MoreClassRelics:CounterPower": {
-    "NAME": "Counter",
+  "MoreClassRelics:RevengePower": {
+    "NAME": "Revenge",
     "DESCRIPTIONS": [
-      "The next time you take damage, deal that much to ALL enemies.",
-      "The next #b", " times you take damage, deal that much to ALL enemies."
+      "The next time you take damage, return that much back to ALL enemies.",
+      "The next time you take damage, return #b", " times that much back to ALL enemies."
     ]
   }
 }
