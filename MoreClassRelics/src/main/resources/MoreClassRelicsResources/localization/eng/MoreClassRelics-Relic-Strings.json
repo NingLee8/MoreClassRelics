@@ -17,7 +17,7 @@
     "NAME": "Folding Chair",
     "FLAVOR": "IRONCLAD WITH THE FOLDING CHAIR!",
     "DESCRIPTIONS": [
-      "When an #yAttack on a #yVulnerable enemy is #yFatal, gain #b12 #yGold."
+      "When an #yAttack on a #yVulnerable enemy is #yFatal, gain #b18 #yGold."
     ]
   },
   "MoreClassRelics:Emberfly": {
@@ -66,7 +66,7 @@
     "NAME": "Cold Battery",
     "FLAVOR": "Don't lick it.",
     "DESCRIPTIONS": [
-      "Swap the base values of #yLightning Orbs and #yFrost Orbs."
+      "If you have more #yLightning orbs than #yFrost orbs, your #yFrost orbs trigger their passive an additional time. (and vice versa)"
     ]
   },
   "MoreClassRelics:GlassCog": {
